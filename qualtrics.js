@@ -17,7 +17,7 @@ Qualtrics.SurveyEngine.addOnload(function () {
         task_github + "jspsych-6.1.0/jspsych.js",
         task_github + "jspsych-6.1.0/plugins/jspsych-html-keyboard-response.js",
         task_github + "jspsych-6.1.0/plugins/jspsych-survey-multi-select.js",
-        task_github + "jspsych-6.1.0/main.js"
+        task_github + "main.js"
         task_github + "jspsych-6.1.0/plugins/jspsych-survey-text.js"
         task_github + "jspsych-6.1.0/plugins/jspsych-fullscreen.js"
         task_github + "jspsych-6.1.0/plugins/jspsych-survey-multi-choice.js"
@@ -44,39 +44,24 @@ Qualtrics.SurveyEngine.addOnload(function () {
     jQuery("<div id = 'display_stage_background'></div>").appendTo('body');
     jQuery("<div id = 'display_stage'></div>").appendTo('body');
 
-    /* Change 4: Wrapping jsPsych.init() in a function */
     function initExp() {
+  jsPsych.init({
+      timeline: timeline,
+      display_element: 'display_stage',
+      on_finish: function (data) {
 
-        jsPsych.init({
-            timeline: timeline,
-            display_element: 'display_stage',
-            on_finish: function (data) {
-                /* Change 5: Summarizing and save the results to Qualtrics */
-                // summarize the results
-                var trials = jsPsych.data.get().filter({
-                    test_part: 'test'
-                });
-                var correct_trials = trials.filter({
-                    correct: true
-                });
-                var accuracy = Math.round(correct_trials.count() / trials.count() * 100);
-                var rt = Math.round(correct_trials.select('rt').mean());
-
-                // save to qualtrics embedded data
-                Qualtrics.SurveyEngine.setEmbeddedData("accuracy", accuracy);
-                Qualtrics.SurveyEngine.setEmbeddedData("rt", rt);
-
-                /* Change 6: Adding the clean up and continue functions.*/
-                // clear the stage
-                jQuery('display_stage').remove();
-                jQuery('display_stage_background').remove();
-
-                // simulate click on Qualtrics "next" button, making use of the Qualtrics JS API
-                qthis.clickNextButton();
-            }
-        });
-    }
-});
+            var datajs = jsPsych.data.get().json();
+          
+          Qualtrics.SurveyEngine.setEmbeddedData("datajs", datajs);
+  
+          jQuery('display_stage').remove();
+          jQuery('display_stage_background').remove();
+  
+          qthis.clickNextButton();
+      };
+  });
+};
+});    
 
 Qualtrics.SurveyEngine.addOnReady(function () {
     /*Place your JavaScript here to run when the page is fully displayed*/
