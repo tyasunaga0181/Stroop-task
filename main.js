@@ -27,7 +27,7 @@ var informedConsent = {
       required: true,
       name: 'participantname'
   }],
-  button_label: '次へ,
+  button_label: '次へ',
   on_finish: function(data) {
     par_info.name = JSON.parse(data.responses).participantname
   }
