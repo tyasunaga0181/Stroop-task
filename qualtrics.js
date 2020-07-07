@@ -10,7 +10,7 @@ Qualtrics.SurveyEngine.addOnload(function () {
     qthis.hideNextButton();
 
     /* Change 2: Defining and load required resources */
-    var task_github = "https://yassu0417.github.io/Stoop-task/";
+    var task_github = "https://yassu0417.github.io/Stroop-task/";
     // https://<GitHubのユーザー名>.github.io/<レポジトリ名>/
 
     var requiredResources = [
