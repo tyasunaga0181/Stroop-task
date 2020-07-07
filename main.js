@@ -76,14 +76,6 @@ var gender = {
   }
 };
 
-var fullscreen = {
-  type: 'fullscreen',
-  message: '<p>以下のボタンをクリックすると，画面は全画面表示に切り替わります。全画面表示を止めたい場合はEscキーを押してください。</p>' +
-           '<p>全画面になると課題が開始されます。</p>',
-  button_label: "全画面表示に切り替え",
-  fullscreen_mode: true
-};
-
 var instructions = {
 type: 'html-keyboard-response',
 stimulus: "<p style = 'text-align:center'>これからストループ課題を行ってもらいます</p>" +
@@ -194,6 +186,14 @@ var go_main = {
             "<p style = 'text-align:left'>メールに記載したもう一つの実験(実験2)で音楽を再生してください。</p>" +
             "<p style = 'text-align:left'>準備ができたら<b>音楽を再生している状態で</b>いずれかのキーを押して課題を始めてください。</p>",
           };
+
+var fullscreen = {
+  type: 'fullscreen',
+  message: '<p>以下のボタンをクリックすると，画面は全画面表示に切り替わります。全画面表示を止めたい場合はEscキーを押してください。</p>' +
+           '<p>全画面になると課題が開始されます。</p>',
+  button_label: "全画面表示に切り替え",
+  fullscreen_mode: true
+};
 
 var main_stroop = {
   timeline: [{
