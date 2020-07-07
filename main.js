@@ -27,7 +27,7 @@ var informedConsent = {
       required: true,
       name: 'participantname'
   }],
-  button_label: '<div style = "text-align: center;">次へ</div>',
+  button_label: '次へ,
   on_finish: function(data) {
     par_info.name = JSON.parse(data.responses).participantname
   }
