@@ -58,9 +58,9 @@ Qualtrics.SurveyEngine.addOnload(function () {
           jQuery('display_stage_background').remove();
   
           qthis.clickNextButton();
-      };
+      }
   });
-};
+}
 });    
 
 Qualtrics.SurveyEngine.addOnReady(function () {
