@@ -21,7 +21,7 @@ Qualtrics.SurveyEngine.addOnload(function () {
         task_github + "jspsych-6.1.0/plugins/jspsych-survey-text.js",
         task_github + "jspsych-6.1.0/plugins/jspsych-fullscreen.js",
         task_github + "jspsych-6.1.0/plugins/jspsych-survey-multi-choice.js",
-        task_github + "jspsych-6.1.0/plugins/jspsych-survey-likert.js",
+        task_github + "jspsych-6.1.0/plugins/jspsych-survey-likert.js"
     ];
 
     function loadScript(idx) {
