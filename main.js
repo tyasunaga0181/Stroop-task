@@ -4,7 +4,7 @@ var informedConsent = {
   type: 'survey-text',
   questions: [{
       prompt: '<span style = "font-size: 14pt"><b>以上の内容をよく読んで、理解した上で実験参加に同意いただける方は下の空欄にお名前の入力をお願いします。同意されない方は、ウィンドウを閉じてください。</b></span>'+
-      '<div style = "font-size: 14pt; text-align: center;"><p>この度は本実験に参加していただき、誠にありがとうございます。参加にあたり、以下の説明をスクロールしてお読みください。</p>' +
+      '<div style = "font-size: 14pt; text-align: left;"><p>この度は本実験に参加していただき、誠にありがとうございます。参加にあたり、以下の説明をスクロールしてお読みください。</p>' +
       '<p><b>1．研究目的</b>' +
       '<br>本研究は、認知課題を行う際に音楽を聴取することが与える影響について調査することを目的としております。</p>' +
       '<p><b>2．研究内容</b>' +
@@ -27,7 +27,7 @@ var informedConsent = {
       required: true,
       name: 'participantname'
   }],
-  button_label: '次へ',
+  button_label: '<div style = "text-align: center;">次へ</div>',
   on_finish: function(data) {
     par_info.name = JSON.parse(data.responses).participantname
   }
