@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="jspsych-6.1.0/jspsych.js"></script>
+  <script src="jspsych-6.1.0/plugins/jspsych-html-keyboard-response.js"></script>
+  <script src="jspsych-6.1.0/plugins/jspsych-survey-multi-select.js"></script>
+  <script src="main.js"></script>
+  <script src="jspsych-6.1.0/plugins/jspsych-survey-text.js"></script>
+  <script src="jspsych-6.1.0/plugins/jspsych-fullscreen.js"></script>
+  <script src="jspsych-6.1.0/plugins/jspsych-survey-multi-choice.js"></script>
+  <script src="jspsych-6.1.0/plugins/jspsych-survey-likert.js"></script>
+  <link rel="stylesheet" href="jspsych-6.1.0/css/jspsych.css" type="text/css"></link>
+</head>
+<body>
+</body>
+<script>
+
+
+  jsPsych.init({
+   timeline: timeline,
+   on_finish: function() {
+     jsPsych.data.displayData();
+   }
+ });
+ </script>
+
+ </html>
