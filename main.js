@@ -34,7 +34,7 @@ var informedConsent = {
 var PC_check = {
   type: 'survey-multi-select',
   questions: [
-    　{prompt:'本実験はスマートフォンでは実施できません。必ずPCで行うようにしてください。PCで行っている場合はチェックをお願いします。',
+    　{prompt:'<p>本実験はスマートフォンでは実施できません。必ずPCで行うようにしてください。PCで行っている場合はチェックをお願いします。</p>',
       options: ['<span style = "font-size: 14pt">私はPCで本実験に参加しています。</span>'],
       required: true,
       name: 'approval_2'
@@ -46,7 +46,7 @@ var PC_check = {
 var par_id = {
   type: 'survey-text',
   questions: [
-    {prompt: '学籍番号を入力してください', columns: 10, required: true, name: 'participantID'},
+    {prompt: '<p>学籍番号を入力してください</p>', columns: 10, required: true, name: 'participantID'},
   ],
   button_label: '次へ',
   on_finish: function(data) {
@@ -57,7 +57,7 @@ var par_id = {
 var age = {
   type: 'survey-text',
   questions: [
-    {prompt: '年齢を入力してください', columns: 3, required: true, name: 'age'},
+    {prompt: '<p>年齢を入力してください</p>', columns: 3, required: true, name: 'age'},
   ],
   button_label: '次へ',
   on_finish: function(data) {
@@ -68,7 +68,7 @@ var age = {
 var gender = {
   type: 'survey-multi-choice',
   questions: [
-    {prompt: "性別を選択してください", options: ['男性', '女性', 'その他'], required: true, horizontal: true, name: 'gender'},
+    {prompt: "<p>性別を選択してください</p>", options: ['男性', '女性', 'その他'], required: true, horizontal: true, name: 'gender'},
   ],
   button_label: '次へ',
   on_finish: function(data) {
@@ -171,7 +171,7 @@ var pre_stroop = {
   type: "html-keyboard-response",
   trial_duration: 2000,
   stimulus: jsPsych.timelineVariable('stimulus'),
-  prompt: '赤色ならR,  青色ならB,  緑色ならG,  黄色ならY',
+  prompt: '<p>赤色ならR,  青色ならB,  緑色ならG,  黄色ならY</p>',
   choices: [82, 66, 89, 71],
   }],
   timeline_variables:stimuli,
@@ -200,7 +200,7 @@ var main_stroop = {
   type: "html-keyboard-response",
   trial_duration: 2000,
   stimulus: jsPsych.timelineVariable('stimulus'),
-  prompt: '赤色ならR,  青色ならB,  緑色ならG,  黄色ならY',
+  prompt: '<p>赤色ならR,  青色ならB,  緑色ならG,  黄色ならY</p>',
   choices: [82, 66, 89, 71],
   }],
   timeline_variables:stimuli,
