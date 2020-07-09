@@ -382,7 +382,7 @@ var　questionnaire_5 = {
  data.questionnaire_5_5 = JSON.parse(data.responses).feelings_5_5,
  data.questionnaire_5_6 = JSON.parse(data.responses).feelings_5_6,
  data.questionnaire_5_7 = JSON.parse(data.responses).feelings_5_7,
- data.questionnaire_5_8 = JSON.parse(data.responses).feelings_5_8,  
+ data.questionnaire_5_8 = JSON.parse(data.responses).feelings_5_8
   }
 };
 
