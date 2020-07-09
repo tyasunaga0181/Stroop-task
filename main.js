@@ -388,9 +388,13 @@ var　questionnaire_5 = {
 
 var finish = {
  type: 'html-keyboard-response',
- stimulus: "以上で質問紙は終了です。" +
-         "本日は実験にご参加いただきありがとうございました。",
+ stimulus: function(){
+ var datajs = jsPsych.data.get().json();
+ 
+ return "以上で質問紙は終了です。" +
+        "本日は実験にご参加いただきありがとうございました。",
          }
+         };
 
 var timeline = [];
 timeline.push(informedConsent);
