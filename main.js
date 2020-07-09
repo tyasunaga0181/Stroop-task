@@ -1,5 +1,3 @@
-var par_info = {};
-
 var informedConsent = {
   type: 'survey-text',
   questions: [{
@@ -27,7 +25,7 @@ var informedConsent = {
   }],
   button_label: '次へ',
   on_finish: function(data) {
-    par_info.name = JSON.parse(data.responses).participantname
+    data.name = JSON.parse(data.responses).participantname
   }
 };
 
@@ -50,7 +48,7 @@ var par_id = {
   ],
   button_label: '次へ',
   on_finish: function(data) {
-    par_info.id = JSON.parse(data.responses).participantID // 一時保存
+    data.id = JSON.parse(data.responses).participantID // 一時保存
   }
 };
 
@@ -61,7 +59,7 @@ var age = {
   ],
   button_label: '次へ',
   on_finish: function(data) {
-    par_info.age = JSON.parse(data.responses).age // 一時保存
+    data.age = JSON.parse(data.responses).age // 一時保存
   }
 };
 
@@ -72,7 +70,7 @@ var gender = {
   ],
   button_label: '次へ',
   on_finish: function(data) {
-    par_info.gender = JSON.parse(data.responses).gender // 一時保存
+    data.gender = JSON.parse(data.responses).gender // 一時保存
   }
 };
 
@@ -248,6 +246,10 @@ var questionnaire_1 = {
     {prompt: "音楽を聴いていた時の気分は", name: 'feelings_6', labels: scale_6, required: true},
 ],
   button_label:'次へ',
+  on_finish: function(data) {
+  data.questionnaire_1 = JSON.parse(data.responses).questionnaire_1
+  }
+  
 };
 
 var scale_2_1 = ["音楽を<br>聴取しなかった","非常に<br>心地よい", "かなり<br>心地よい", "やや<br>心地よい", "どちらでもない", "やや<br>心地悪い", "かなり<br>心地悪い", "非常に<br>心地悪い"];
@@ -274,6 +276,10 @@ var  questionnaire_2 = {
    {prompt: "音楽を聴いていた時の心身の自覚は", name: 'feelings_2_6', labels: scale_2_6, required: true},
 ],
  button_label:'次へ',
+ on_finish: function(data) {
+ data.questionnaire_2 = JSON.parse(data.responses).questionnaire_2
+  }
+  
 };
 
 var scale_3_1 = ["音楽を<br>聴取しなかった","非常に<br>好き", "かなり<br>好き", "やや<br>好き", "どちらでもない", "やや<br>嫌い", "かなり<br>嫌い", "非常に<br>嫌い"];
@@ -287,6 +293,10 @@ var  questionnaire_3 = {
    {prompt: "音楽の印象は", name: 'feelings_3_2', labels: scale_3_2, required: true},
 ],
  button_label:'次へ',
+ on_finish: function(data) {
+ data.questionnaire_3 = JSON.parse(data.responses).questionnaire_3
+  }
+  
 };
 
 var scale_4_1 = ["音楽を<br>聴取しなかった","非常に<br>当てはまる", "かなり<br>当てはまる", "やや<br>当てはまる", "どちらでもない", "やや<br>当てはまらない", "かなり<br>当てはまらない", "非常に<br>当てはまらない"];
@@ -308,6 +318,9 @@ var  questionnaire_4 = {
    {prompt: "音楽に気高い印象を持った", name: 'feelings_4_12', labels: scale_4_1, required: true},
  ],
  button_label:'次へ',
+ on_finish: function(data) {
+ data.questionnaire_4 = JSON.parse(data.responses).questionnaire_4
+  }
 };
 
 var scale_5_1 = ["非常に<br>楽しかった", "かなり<br>楽しかった", "やや<br>楽しかった", "どちらでもない", "やや<br>辛かった", "かなり<br>辛かった", "非常に<br>辛かった"];
@@ -331,15 +344,18 @@ var　questionnaire_5 = {
  type: 'survey-likert',
  questions: [
    {prompt: "本実験で行った課題は", name: 'feelings_5_1', labels: scale_5_1, required: true},
-   {prompt: "本実験で行った課題は", name: 'feelings_5_2', labels: scale_5_1, required: true},
-   {prompt: "本実験で行った課題は", name: 'feelings_5_3', labels: scale_5_1, required: true},
-   {prompt: "本実験で行った課題は", name: 'feelings_5_4', labels: scale_5_1, required: true},
-   {prompt: "本実験で行った課題は", name: 'feelings_5_5', labels: scale_5_1, required: true},
-   {prompt: "本実験で行った課題は", name: 'feelings_5_6', labels: scale_5_1, required: true},
-   {prompt: "本実験で行った課題は", name: 'feelings_5_7', labels: scale_5_1, required: true},
-   {prompt: "本実験で行った課題は", name: 'feelings_5_8', labels: scale_5_1, required: true},
+   {prompt: "本実験で行った課題は", name: 'feelings_5_2', labels: scale_5_2, required: true},
+   {prompt: "本実験で行った課題は", name: 'feelings_5_3', labels: scale_5_3, required: true},
+   {prompt: "本実験で行った課題は", name: 'feelings_5_4', labels: scale_5_4, required: true},
+   {prompt: "本実験で行った課題は", name: 'feelings_5_5', labels: scale_5_5, required: true},
+   {prompt: "本実験で行った課題は", name: 'feelings_5_6', labels: scale_5_6, required: true},
+   {prompt: "本実験で行った課題は", name: 'feelings_5_7', labels: scale_5_7, required: true},
+   {prompt: "本実験で行った課題は", name: 'feelings_5_8', labels: scale_5_8, required: true},
  ],
  button_label:'次へ',
+ on_finish: function(data) {
+ data.questionnaire_5 = JSON.parse(data.responses).questionnaire_5
+  }
 };
 
 var finish = {
