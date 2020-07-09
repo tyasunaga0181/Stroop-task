@@ -238,16 +238,21 @@ var scale_6 = ["音楽を<br>聴取しなかった","非常に<br>積極的な�
 var questionnaire_1 = {
   type: 'survey-likert',
   questions: [
-    {prompt: "音楽を聴いていた時の気分は", name: 'feelings_1', labels: scale_1, required: true},
-    {prompt: "音楽を聴いていた時の気分は", name: 'feelings_2', labels: scale_2, required: true},
-    {prompt: "音楽を聴いていた時の気分は", name: 'feelings_3', labels: scale_3, required: true},
-    {prompt: "音楽を聴いていた時の気分は", name: 'feelings_4', labels: scale_4, required: true},
-    {prompt: "音楽を聴いていた時の気分は", name: 'feelings_5', labels: scale_5, required: true},
-    {prompt: "音楽を聴いていた時の気分は", name: 'feelings_6', labels: scale_6, required: true},
+    {prompt: "音楽を聴いていた時の気分は", name: 'feelings_1_1', labels: scale_1, required: true},
+    {prompt: "音楽を聴いていた時の気分は", name: 'feelings_1_2', labels: scale_2, required: true},
+    {prompt: "音楽を聴いていた時の気分は", name: 'feelings_1_3', labels: scale_3, required: true},
+    {prompt: "音楽を聴いていた時の気分は", name: 'feelings_1_4', labels: scale_4, required: true},
+    {prompt: "音楽を聴いていた時の気分は", name: 'feelings_1_5', labels: scale_5, required: true},
+    {prompt: "音楽を聴いていた時の気分は", name: 'feelings_1_6', labels: scale_6, required: true},
 ],
   button_label:'次へ',
   on_finish: function(data) {
-  data.questionnaire_1 = JSON.parse(data.responses).questionnaire_1
+  data.questionnaire_1_1 = JSON.parse(data.responses).feelings_1_1,
+  data.questionnaire_1_2 = JSON.parse(data.responses).feelings_1_2,
+  data.questionnaire_1_3 = JSON.parse(data.responses).feelings_1_3,
+  data.questionnaire_1_4 = JSON.parse(data.responses).feelings_1_4,
+  data.questionnaire_1_5 = JSON.parse(data.responses).feelings_1_5,
+  data.questionnaire_1_6 = JSON.parse(data.responses).feelings_1_6
   }
   
 };
@@ -277,7 +282,12 @@ var  questionnaire_2 = {
 ],
  button_label:'次へ',
  on_finish: function(data) {
- data.questionnaire_2 = JSON.parse(data.responses).questionnaire_2
+ data.questionnaire_2_1 = JSON.parse(data.responses).questionnaire_2_1,
+ data.questionnaire_2_2 = JSON.parse(data.responses).questionnaire_2_2,  
+ data.questionnaire_2_3 = JSON.parse(data.responses).questionnaire_2_3,  
+ data.questionnaire_2_4 = JSON.parse(data.responses).questionnaire_2_4,
+ data.questionnaire_2_5 = JSON.parse(data.responses).questionnaire_2_5,
+ data.questionnaire_2_6 = JSON.parse(data.responses).questionnaire_2_6
   }
   
 };
@@ -294,7 +304,8 @@ var  questionnaire_3 = {
 ],
  button_label:'次へ',
  on_finish: function(data) {
- data.questionnaire_3 = JSON.parse(data.responses).questionnaire_3
+ data.questionnaire_3_1 = JSON.parse(data.responses).questionnaire_3_1,
+ data.questionnaire_3_2 = JSON.parse(data.responses).questionnaire_3_2
   }
   
 };
@@ -319,7 +330,18 @@ var  questionnaire_4 = {
  ],
  button_label:'次へ',
  on_finish: function(data) {
- data.questionnaire_4 = JSON.parse(data.responses).questionnaire_4
+ data.questionnaire_4_1 = JSON.parse(data.responses).questionnaire_4_1,
+ data.questionnaire_4_2 = JSON.parse(data.responses).questionnaire_4_2,
+ data.questionnaire_4_3 = JSON.parse(data.responses).questionnaire_4_3,
+ data.questionnaire_4_4 = JSON.parse(data.responses).questionnaire_4_4, 
+ data.questionnaire_4_5 = JSON.parse(data.responses).questionnaire_4_5,
+ data.questionnaire_4_6 = JSON.parse(data.responses).questionnaire_4_6,
+ data.questionnaire_4_7 = JSON.parse(data.responses).questionnaire_4_7,
+ data.questionnaire_4_8 = JSON.parse(data.responses).questionnaire_4_8,
+ data.questionnaire_4_9 = JSON.parse(data.responses).questionnaire_4_9,
+ data.questionnaire_4_10 = JSON.parse(data.responses).questionnaire_4_10,
+ data.questionnaire_4_11 = JSON.parse(data.responses).questionnaire_4_11,
+ data.questionnaire_4_12 = JSON.parse(data.responses).questionnaire_4_12
   }
 };
 
@@ -354,7 +376,14 @@ var　questionnaire_5 = {
  ],
  button_label:'次へ',
  on_finish: function(data) {
- data.questionnaire_5 = JSON.parse(data.responses).questionnaire_5
+ data.questionnaire_5_1 = JSON.parse(data.responses).questionnaire_5_1,
+ data.questionnaire_5_2 = JSON.parse(data.responses).questionnaire_5_2,
+ data.questionnaire_5_3 = JSON.parse(data.responses).questionnaire_5_3,
+ data.questionnaire_5_4 = JSON.parse(data.responses).questionnaire_5_4, 
+ data.questionnaire_5_5 = JSON.parse(data.responses).questionnaire_5_5,
+ data.questionnaire_5_6 = JSON.parse(data.responses).questionnaire_5_6,
+ data.questionnaire_5_7 = JSON.parse(data.responses).questionnaire_5_7,
+ data.questionnaire_5_8 = JSON.parse(data.responses).questionnaire_5_8,  
   }
 };
 
