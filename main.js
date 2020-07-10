@@ -180,7 +180,7 @@ var go_main = {
   type: 'html-keyboard-response',
   stimulus: "<p style = 'text-align:left'>練習は以上です。ただいまより本番を行ってもらいます。</p>" +
   　　　　　 "<p style = 'text-align:left'>本番の課題は音楽を聴取しながら行っていただきます。</p>" +
-            "<p style = 'text-align:left'>実験募集メールに記載されたもう一つの実験(実験2)で音楽を再生してください。</p>" +
+            "<p style = 'text-align:left'>実験募集メールに記載されたもう一つの実験(実験2)を音量調節を終えるところまで進めてください。。</p>" +
             "<p style = 'text-align:left'>準備ができたら<b>音楽を再生している状態で</b>いずれかのキーを押して課題を始めてください。</p>",
           };
 
