@@ -75,16 +75,16 @@ var gender = {
 
 var instructions = {
 type: 'html-keyboard-response',
-stimulus: "<p style = 'text-align:center'>これからストループ課題を行ってもらいます</p>" +
-          "<p style = 'text-align:center'>この課題では、以下のような色のついた単語を見てもらいます</p>"+
+stimulus: "<p style = 'text-align:left'>これからストループ課題を行ってもらいます</p>" +
+          "<p style = 'text-align:left'>この課題では、以下のような色のついた単語を見てもらいます</p>"+
           "<p style='color:red;font-size:80pt;'>あお</p>" +
-          "<p style = 'text-align:center'>単語の意味は無視して、それぞれの単語の「色」を以下のキーボードを押して回答してください</p>"+
-          "<p style = 'text-align:center'>・<span style = 'color red'>あか</span>の単語ならRを押す</p>" +
-          "<p style = 'text-align:center'>・<span style = 'color blue'>あお</span>の単語ならBを押す</p>" +
-          "<p style = 'text-align:center'>・<span style = 'color green'>みどり</span>の単語ならGを押す</p>" +
-          "<p style = 'text-align:center'>・<span style = 'color yellow'>きいろ</span>の単語ならYを押す</p>" +
-          "<p style = 'text-align:center'>上の例の場合だと、赤色で「あお」と書いてありますので、Rを押してください</p>"+
-          "<p style = 'text-align:center'>まず練習を行います。準備ができたらいずれかのキーを押して課題を始めてください。</p>",
+          "<p style = 'text-align:left'>単語の意味は無視して、それぞれの単語の「色」を以下のキーボードを押して回答してください</p>"+
+          "<p style = 'text-align:left'>・<span style = 'color red'>あか</span>の単語ならRを押す</p>" +
+          "<p style = 'text-align:left'>・<span style = 'color blue'>あお</span>の単語ならBを押す</p>" +
+          "<p style = 'text-align:left'>・<span style = 'color green'>みどり</span>の単語ならGを押す</p>" +
+          "<p style = 'text-align:left'>・<span style = 'color yellow'>きいろ</span>の単語ならYを押す</p>" +
+          "<p style = 'text-align:left'>上の例の場合だと、赤色で「あお」と書いてありますので、Rを押してください</p>"+
+          "<p style = 'text-align:left'>まず練習を行います。準備ができたらいずれかのキーを押して課題を始めてください。</p>",
 post_trial_gap:2000
 };
 
@@ -186,8 +186,8 @@ var go_main = {
 
 var fullscreen = {
   type: 'fullscreen',
-  message: '<p>以下のボタンをクリックすると，画面は全画面表示に切り替わります。</p>' +
-           '<p>全画面になると課題が開始されます。</p>',
+  message: "<p style = 'text-align:left'>以下のボタンをクリックすると，画面は全画面表示に切り替わります。</p>" +
+           "<p style = 'text-align:left'>全画面になると課題が開始されます。</p>",
   button_label: "全画面表示に切り替え",
   fullscreen_mode: true
 };
@@ -215,11 +215,11 @@ var main_stroop = {
 
 var lead_questionnaire = {
   type: 'html-keyboard-response',
-  stimulus: "<p style = 'text-align:center'>以上で課題は終了です。</p>" +
-          "<p style = 'text-align:center'>続いて質問紙に回答していただきます。</p>"+
-          "<p style = 'text-align:center'><b>Escキーを押して全画面表示を終了し、もう一つの実験のウィンドウを閉じて音楽聴取はここで終了してください。</b></p>" +
-           "<p style = 'text-align:center'>ヘッドホン,イヤホンも外して下さい。</p>" +
-          "<p style = 'text-align:center'>上記の準備が終了したらいずれかのキーを押し、質問紙の回答に進んでください。</p>",
+  stimulus: "<p style = 'text-align:left'>以上で課題は終了です。</p>" +
+          "<p style = 'text-align:left'>続いて質問紙に回答していただきます。</p>"+
+          "<p style = 'text-align:left'><b>Escキーを押して全画面表示を終了し、もう一つの実験のウィンドウを閉じて音楽聴取はここで終了してください。</b></p>" +
+           "<p style = 'text-align:left'>ヘッドホン,イヤホンも外して下さい。</p>" +
+          "<p style = 'text-align:left'>上記の準備が終了したらいずれかのキーを押し、質問紙の回答に進んでください。</p>",
 };
 
 var scale_1 = ["音楽を<br>聴取しなかった","非常に<br>愉快", "かなり<br>愉快", "やや<br>愉快", "どちらでもない", "やや<br>不快", "かなり<br>不快", "非常に<br>不快"];
@@ -387,13 +387,13 @@ var　questionnaire_5 = {
 
 var finish = {
  type: 'html-keyboard-response',
- stimulus:"<p>以上で質問紙は終了です。</p>" +
-          "<p>いずれかのキーを押すと画面上に本実験のデータが表示されますので</p>"+
-          "<p>そのデータを<b>すべてコピーし実験募集のメールに記載された連絡先にすべて貼り付けて送ってください。</b></p>"+
-          "<p>その連絡をもって実験に参加していただいたことを確認するため、</p>"+
-  　　　　 "<p><b>連絡がなかった場合参加点を付与することができませんので必ずメールを送っていただきますようよろしくお願いします。</b></p>"+
-          "<p>メールの送信をもって実験終了となりますので、メールを送信された方はウィンドウを閉じていただいて構いません、</p>"+
-          "<p>本日は実験に参加していただきありがとうございました。</p>"
+ stimulus:"<p style = 'text-align:left'>以上で質問紙は終了です。</p>" +
+          "<p style = 'text-align:left'>いずれかのキーを押すと画面上に本実験のデータが表示されますので</p>"+
+          "<p style = 'text-align:left'>そのデータを<b>すべてコピーし実験募集のメールに記載された連絡先にすべて貼り付けて送ってください。</b></p>"+
+          "<p style = 'text-align:left'>その連絡をもって実験に参加していただいたことを確認するため、</p>"+
+  　　　　 "<p style = 'text-align:left'><b>連絡がなかった場合参加点を付与することができませんので必ずメールを送っていただきますようよろしくお願いします。</b></p>"+
+          "<p style = 'text-align:left'>メールの送信をもって実験終了となりますので、メールを送信された方はウィンドウを閉じていただいて構いません、</p>"+
+          "<p style = 'text-align:left'>本日は実験に参加していただきありがとうございました。</p>"
          };
 
 var timeline = [];
