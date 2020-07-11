@@ -389,7 +389,7 @@ var finish = {
  type: 'html-keyboard-response',
  stimulus:"<p style = 'text-align:left'>以上で質問紙は終了です。</p>" +
           "<p style = 'text-align:left'>いずれかのキーを押すと画面上に本実験のデータが表示されますので</p>"+
-          "<p style = 'text-align:left'>そのデータを<b>すべてコピーし実験募集のメールに記載された連絡先にすべて貼り付けて送ってください。</b></p>"+
+          "<p style = 'text-align:left'>そのデータを<b>すべてコピーし実験募集のメールに記載された連絡先(cgvb0181@mail2.doshisha.ac.jp)にすべて貼り付けて送ってください。</b></p>"+
           "<p style = 'text-align:left'>その連絡をもって実験に参加していただいたことを確認するため、</p>"+
   　　　　 "<p style = 'text-align:left'><b>連絡がなかった場合参加点を付与することができませんので必ずメールを送っていただきますようよろしくお願いします。</b></p>"+
           "<p style = 'text-align:left'>メールの送信をもって実験終了となりますので、メールを送信された方はウィンドウを閉じていただいて構いません、</p>"+
