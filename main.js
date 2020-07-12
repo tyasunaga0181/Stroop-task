@@ -4,18 +4,18 @@ var informedConsent = {
       prompt: '<span style = "font-size: 10pt"><b>以上の内容をよく読んで、理解した上で実験参加に同意いただける方は下の空欄にお名前の入力をお願いします。同意されない方は、ウィンドウを閉じてください。</b></span>'+
       '<div style = "font-size: 10pt; text-align: left;"><p>この度は本実験に参加していただき、誠にありがとうございます。参加にあたり、以下の説明をスクロールしてお読みください。</p>' +
       '<p><b>1．研究目的</b>' +
-      '<br>本研究は、認知課題を行う際に音楽を聴取することが与える影響について調査することを目的としております。</p>' +
+      '<br>本研究は、環境が課題成績に与える影響について調査することを目的としております。</p>' +
       '<p><b>2．研究内容</b>' +
-      '<br>本研究では、音楽を聴取しながらストループ課題を行っていただき、その後簡単な質問紙に答えていただきます。課題の実行と質問紙は合わせて15分程度で終了します。なお、これから行う質問紙や課題は、あなた個人の性格や能力を個別に評価することを目的とはしておりません。' +
+      '<br>本研究では、音楽を聴取しながら課題を行っていただき、その後簡単な質問紙に答えていただきます。課題の実行と質問紙は合わせて15分程度で終了します。なお、これから行う質問紙や課題は、あなた個人の性格や能力を個別に評価することを目的とはしておりません。' +
+      '<p><b>3.本実験に取り組む環境について</b>' +
+    　'<p>本実験はスマートフォンでは実施できません。必ずPCで行うようにしてください。'
       '<p><b>3．危険性ならびに不利益</b>' +
       '<br>質問紙への回答や課題中、もし不快感を感じることがあったら、ご自身の意志で研究参加をいつでも中止することができます。参加の中止はいつ、いかなる理由でも可能です。また、参加の中止、不参加に伴う不利益は一切生じません。</p>' +
       '<p><b>4．参加者の権利</b>' +
       '<br>本研究の参加は皆様の自由意志によるものです。本研究に参加することに同意しても、それはいつでも撤回することができます。同意を撤回しても、いかなる不利益を受けることはありません。参加に同意した後に、参加途中で撤回する場合は、そのままウェブブラウザを閉じていただけると同意撤回したとみなします。参加途中で参加を撤回された場合は、そのデータをその後の研究で使用いたしません。また、最後まで参加したもののご自身の研究データを研究に使用してほしくない場合は、以下の連絡先にその旨をご連絡いただければ、その後の研究でそのデータを使用いたしません。</p>' +
-      '<p><b>5.謝礼</b>' +
-      '<br>謝礼につきましては、参加点とさせていただきます。</p>' +
-      '<p><b>6.研究結果の使用およびプライバシーの保護</b>' +
+      '<p><b>5.研究結果の使用およびプライバシーの保護</b>' +
       '<br>参加された方の質問紙への回答や課題への反応は全て匿名で扱われ、データからあなたが特定されることはありません。本研究の結果は、学術論文や学会発表などを通じて公表される可能性があります。ただし、その際も統計的に処理した結果のみが公表されるため、特定の個人に焦点を当てた発表は行いません。' +
-      '<p><b>7.研究に関する問い合わせ先</b>' +
+      '<p><b>6.研究に関する問い合わせ先</b>' +
       '<br>研究責任者: 及川 昌典(同志社大学心理学部教授) Email: moikawa@mail.doshisha.ac.jp' +
       '<br>研究実施者: 安永 俊樹, 西村 知華, 上田 颯都(同志社大学及川ゼミ) Email: cgvb0181@mail2.doshisha.ac.jp</p></div>',
       columns: 10,
@@ -54,7 +54,7 @@ var par_id = {
 var age = {
   type: 'survey-text',
   questions: [
-    {prompt: '<p>年齢を入力してください</p>', columns: 3, required: true, name: 'age'},
+    {prompt: '<p>年齢を入力してください。答えたくない場合は0と入力してください。</p>', columns: 3, required: true, name: 'age'},
   ],
   button_label: '次へ',
   on_finish: function(data) {
@@ -65,7 +65,7 @@ var age = {
 var gender = {
   type: 'survey-multi-choice',
   questions: [
-    {prompt: "<p>性別を選択してください</p>", options: ['男性', '女性', 'その他'], required: true, horizontal: true, name: 'gender'},
+    {prompt: "<p>性別を選択してください</p>", options: ['男性', '女性', '答えたくない'], required: true, horizontal: true, name: 'gender'},
   ],
   button_label: '次へ',
   on_finish: function(data) {
@@ -74,8 +74,8 @@ var gender = {
 };
 
 var instructions = {
-type: 'html-keyboard-response',
-stimulus: "<p style = 'text-align:left'>これからストループ課題を行ってもらいます</p>" +
+type: 'html-button-response',
+stimulus: "<p style = 'text-align:left'>これから課題を行ってもらいます</p>" +
           "<p style = 'text-align:left'>この課題では、以下のような色のついた単語を見てもらいます</p>"+
           "<p style='color:red;font-size:80pt;'>あお</p>" +
           "<p style = 'text-align:left'>単語の意味は無視して、それぞれの単語の「色」を以下のキーボードを押して回答してください</p>"+
@@ -84,7 +84,8 @@ stimulus: "<p style = 'text-align:left'>これからストループ課題を行�
           "<p style = 'text-align:left'>・<span style = 'color green'>みどり</span>の単語ならGを押す</p>" +
           "<p style = 'text-align:left'>・<span style = 'color yellow'>きいろ</span>の単語ならYを押す</p>" +
           "<p style = 'text-align:left'>上の例の場合だと、赤色で「あお」と書いてありますので、Rを押してください</p>"+
-          "<p style = 'text-align:left'>まず練習を行います。準備ができたらいずれかのキーを押して課題を始めてください。</p>",
+          "<p style = 'text-align:left'>また本課題中は左手中指をR、人差し指をG、右手中指をY、人差し指をBの位置にそれぞれ配置して対応するキーボードを押してください。</p>"+
+          "<p style = 'text-align:left'>まず練習を行います。準備ができたら「次へ」を押して課題を始めてください。</p>",
 post_trial_gap:2000
 };
 
@@ -176,11 +177,11 @@ var pre_stroop = {
 };
 
 var go_main = {
-  type: 'html-keyboard-response',
+  type: 'html-button-response',
   stimulus: "<p style = 'text-align:left'>練習は以上です。ただいまより本番を行ってもらいます。</p>" +
   　　　　　 "<p style = 'text-align:left'>本番の課題は音楽を聴取しながら行っていただきます。</p>" +
             "<p style = 'text-align:left'>実験募集メールに記載されたもう一つの実験(実験2)を音量調節を終えるところまで進めてください。。</p>" +
-            "<p style = 'text-align:left'>準備ができたら<b>音楽を再生している状態で</b>いずれかのキーを押して課題を始めてください。</p>",
+            "<p style = 'text-align:left'>準備ができたら<b>音楽を再生している状態で</b>「次へ」を押して課題を始めてください。</p>",
           };
 
 var fullscreen = {
@@ -212,12 +213,11 @@ var main_stroop = {
 };
 
 var lead_questionnaire = {
-  type: 'html-keyboard-response',
+  type: 'html-button-response',
   stimulus: "<p style = 'text-align:left'>以上で課題は終了です。</p>" +
           "<p style = 'text-align:left'>続いて質問紙に回答していただきます。</p>"+
-          "<p style = 'text-align:left'><b>Escキーを押して全画面表示を終了し、もう一つの実験のウィンドウを閉じて音楽聴取はここで終了してください。</b></p>" +
-           "<p style = 'text-align:left'>ヘッドホン,イヤホンも外して下さい。</p>" +
-          "<p style = 'text-align:left'>上記の準備が終了したらいずれかのキーを押し、質問紙の回答に進んでください。</p>",
+           "<p style = 'text-align:left'>ヘッドホン,イヤホンを外して下さい。</p>" +
+          "<p style = 'text-align:left'>上記の準備が終了したら「次へ」を押し、質問紙の回答に進んでください。</p>",
 };
 
 var scale_1 = ["音楽を<br>聴取しなかった","非常に<br>愉快", "かなり<br>愉快", "やや<br>愉快", "どちらでもない", "やや<br>不快", "かなり<br>不快", "非常に<br>不快"];
