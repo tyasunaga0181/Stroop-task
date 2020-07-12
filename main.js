@@ -166,13 +166,11 @@ var fixation = {
 var pre_stroop = {
   timeline: [{
   type: "html-keyboard-response",
-  trial_duration: 2000,
   stimulus: jsPsych.timelineVariable('stimulus'),
   prompt: '<p>赤色ならR,  青色ならB,  緑色ならG,  黄色ならY</p>',
   choices: [82, 66, 89, 71],
   }],
   timeline_variables:stimuli,
-  post_trial_gap: 1000,
   sample: {type: 'fixed-repetitions',size: 2}
 };
 
@@ -195,13 +193,11 @@ var fullscreen = {
 var main_stroop = {
   timeline: [{
   type: "html-keyboard-response",
-  trial_duration: 2000,
   stimulus: jsPsych.timelineVariable('stimulus'),
   prompt: '<p>赤色ならR,  青色ならB,  緑色ならG,  黄色ならY</p>',
   choices: [82, 66, 89, 71],
   }],
   timeline_variables:stimuli,
-  post_trial_gap: 1000,
   data: jsPsych.timelineVariable('data'),
   on_finish: function(data){
     var correct = 0;
