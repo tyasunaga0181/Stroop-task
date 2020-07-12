@@ -195,7 +195,7 @@ var main_stroop = {
   timeline: [{
   type: "html-keyboard-response",
   stimulus: jsPsych.timelineVariable('stimulus'),
-  post_trial_gap:2000,
+  post_trial_gap:1000,
   prompt: '<p>赤色ならR,  青色ならB,  緑色ならG,  黄色ならY</p>',
   choices: [82, 66, 89, 71],
   }],
