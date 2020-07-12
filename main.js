@@ -86,6 +86,7 @@ stimulus: "<p style = 'text-align:left'>これから課題を行ってもらい�
           "<p style = 'text-align:left'>上の例の場合だと、赤色で「あお」と書いてありますので、Rを押してください</p>"+
           "<p style = 'text-align:left'>また本課題中は左手中指をR、人差し指をG、右手中指をY、人差し指をBの位置にそれぞれ配置して対応するキーボードを押してください。</p>"+
           "<p style = 'text-align:left'>まず練習を行います。準備ができたら「次へ」を押して課題を始めてください。</p>",
+button_label: '次へ',
 post_trial_gap:2000
 };
 
@@ -182,6 +183,7 @@ var go_main = {
   　　　　　 "<p style = 'text-align:left'>本番の課題は音楽を聴取しながら行っていただきます。</p>" +
             "<p style = 'text-align:left'>実験募集メールに記載されたもう一つの実験(実験2)を音量調節を終えるところまで進めてください。。</p>" +
             "<p style = 'text-align:left'>準備ができたら<b>音楽を再生している状態で</b>「次へ」を押して課題を始めてください。</p>",
+  button_label: '次へ',
           };
 
 var fullscreen = {
@@ -218,6 +220,7 @@ var lead_questionnaire = {
           "<p style = 'text-align:left'>続いて質問紙に回答していただきます。</p>"+
            "<p style = 'text-align:left'>ヘッドホン,イヤホンを外して下さい。</p>" +
           "<p style = 'text-align:left'>上記の準備が終了したら「次へ」を押し、質問紙の回答に進んでください。</p>",
+  button_label: '次へ',
 };
 
 var scale_1 = ["音楽を<br>聴取しなかった","非常に<br>愉快", "かなり<br>愉快", "やや<br>愉快", "どちらでもない", "やや<br>不快", "かなり<br>不快", "非常に<br>不快"];
