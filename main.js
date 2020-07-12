@@ -8,7 +8,7 @@ var informedConsent = {
       '<p><b>2．研究内容</b>' +
       '<br>本研究では、音楽を聴取しながら課題を行っていただき、その後簡単な質問紙に答えていただきます。課題の実行と質問紙は合わせて15分程度で終了します。なお、これから行う質問紙や課題は、あなた個人の性格や能力を個別に評価することを目的とはしておりません。' +
       '<p><b>3.本実験に取り組む環境について</b>' +
-    　'<p>本実験はスマートフォンでは実施できません。必ずPCで行うようにしてください。'
+    　'<p>本実験はスマートフォンでは実施できません。必ずPCで行うようにしてください。また、ヘッドホンかイヤホンを着用して課題に取り組んでください。</p>'
       '<p><b>3．危険性ならびに不利益</b>' +
       '<br>質問紙への回答や課題中、もし不快感を感じることがあったら、ご自身の意志で研究参加をいつでも中止することができます。参加の中止はいつ、いかなる理由でも可能です。また、参加の中止、不参加に伴う不利益は一切生じません。</p>' +
       '<p><b>4．参加者の権利</b>' +
@@ -26,6 +26,14 @@ var informedConsent = {
   on_finish: function(data) {
     data.name = JSON.parse(data.responses).participantname
   }
+};
+
+var fullscreen = {
+  type: 'fullscreen',
+  message: "<p style = 'text-align:left'>以下のボタンをクリックすると，画面は全画面表示に切り替わります。</p>" +
+           "<p style = 'text-align:left'>指示があるまで全画面表示をやめないようにしてください。</p>",
+  button_label: "全画面表示に切り替え",
+  fullscreen_mode: true
 };
 
 var PC_check = {
@@ -186,13 +194,7 @@ var go_main = {
   choices: '次へ',
           };
 
-var fullscreen = {
-  type: 'fullscreen',
-  message: "<p style = 'text-align:left'>以下のボタンをクリックすると，画面は全画面表示に切り替わります。</p>" +
-           "<p style = 'text-align:left'>全画面になると課題が開始されます。</p>",
-  button_label: "全画面表示に切り替え",
-  fullscreen_mode: true
-};
+
 
 var main_stroop = {
   timeline: [{
