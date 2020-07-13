@@ -118,7 +118,7 @@ type: 'html-button-response',
   stimulus: "<p style = 'text-align:left'>また、課題中は色のついた文字を表示していない間画面中央に</p>" +
   　　　　　 '<div style="font-size:60px;">+</div>'+
             "<p style = 'text-align:left'>上記のような十字が表示されます。課題中はこの十字を視界の中心で捉えるようにしてください。</p>"+
-            "<p style = 'text-align:left'>「次」を押すと課題が開始されます。</p>" ,
+            "<p style = 'text-align:left'>「次」を押すと課題の練習が開始されます。</p>" ,
 choices: '次',
 post_trial_gap:1000
 };
