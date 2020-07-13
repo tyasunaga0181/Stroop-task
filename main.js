@@ -115,6 +115,16 @@ choices: '次',
 post_trial_gap:1000
 };
 
+var instructions_2 = {
+type: 'html-button-response',
+  stimulus: "<p style = 'text-align:left'>また、課題中は色のついた文字を表示していない間画面中央に</p>" +
+  　　　　　 '<div style="font-size:60px;">+</div>'+
+            "<p style = 'text-align:left'>上記のような十字が表示されます。課題中はこの十字を視界の中心で捉えるようにしてください。</p>"+
+            "<p style = 'text-align:left'>「次」を押すと課題が開始されます。</p>" ,
+choices: '次',
+post_trial_gap:1000
+};
+  
 var stimuli = [
  {
    stimulus: "<p style='color:red;font-size:80pt;'>あか</p>",
@@ -377,9 +387,9 @@ var　questionnaire_5 = {
 };
 
 var finish = {
- type: 'html-keyboard-response',
+ type: 'html-button-response',
  stimulus:"<p style = 'text-align:left'>以上で質問紙は終了です。</p>" +
-          "<p style = 'text-align:left'>いずれかのキーを押すと画面上に本実験のデータが表示されますので</p>"+
+          "<p style = 'text-align:left'>「次」を押すと画面上に本実験のデータが表示されますので</p>"+
           "<p style = 'text-align:left'>そのデータを</p>"+
           "<p style = 'text-align:left'><b>1,右クリックで「すべて選択」を選択する。</b></p>"+
           "<p style = 'text-align:left'><b>2,もう一度右クリックをしてコピーを選択する。</b></p>"+
@@ -389,6 +399,7 @@ var finish = {
   　　　　 "<p style = 'text-align:left'>次のページに進むとこのページに戻ることはできません。手順が不安な方は写真やスクリーンショットを撮ってこの画面を記録しておくようにしてください。</p>"+
           "<p style = 'text-align:left'>メールの送信をもって実験終了となりますので、メールを送信された方はEscキーを押して全画面表示を終了しウィンドウを閉じていただいて構いません。</p>"+
           "<p style = 'text-align:left'>本日は実験に参加していただきありがとうございました。</p>",
+  choices: '次',
          };
 
 var timeline = [];
@@ -401,6 +412,7 @@ timeline.push(par_id);
 timeline.push(age);
 timeline.push(gender);
 timeline.push(instructions);
+timeline.push(instructions_2);
 timeline.push(pre_procedure);
 timeline.push(go_main);
 timeline.push(fullscreen_2);
