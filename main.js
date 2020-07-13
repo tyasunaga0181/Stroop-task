@@ -1,8 +1,8 @@
 var informedConsent_1 = {
   type: 'html-button-response',
   stimulus:
-      '<span style = "font-size: 10pt"><b>以下の内容をよく読んで、理解した上で実験参加に同意いただける方は次のページの空欄にお名前の入力をお願いします。同意されない方は、ウィンドウを閉じてください。</b></span>'+
-      '<div style = "font-size: 10pt; text-align: left;"><p>この度は本実験に参加していただき、誠にありがとうございます。参加にあたり、以下の説明をスクロールしてお読みください。</p>' +
+      '<span style = "font-size: 16pt"><b>以下の内容をよく読んで、理解した上で実験参加に同意いただける方は次のページの空欄にお名前の入力をお願いします。同意されない方は、ウィンドウを閉じてください。</b></span>'+
+      '<div style = "font-size: 16pt; text-align: left;"><p>この度は本実験に参加していただき、誠にありがとうございます。参加にあたり、以下の説明をスクロールしてお読みください。</p>' +
       '<p><b>1．研究目的</b>' +
       '<br>本研究は、環境が課題成績に与える影響について調査することを目的としております。</p>' +
       '<p><b>2．研究内容</b>' +
@@ -16,7 +16,7 @@ var informedConsent_2 = {
   type: 'survey-text',
   questions:[{
     prompt:
-      '<div style = "font-size: 10pt; text-align: left;"><p><b>3．危険性ならびに不利益</b>' +
+      '<div style = "font-size: 16pt; text-align: left;"><p><b>3．危険性ならびに不利益</b>' +
       '<br>質問紙への回答や課題中、もし不快感を感じることがあったら、ご自身の意志で研究参加をいつでも中止することができます。参加の中止はいつ、いかなる理由でも可能です。また、参加の中止、不参加に伴う不利益は一切生じません。</p>' +
       '<p><b>4．参加者の権利</b>' +
       '<br>本研究の参加は皆様の自由意志によるものです。本研究に参加することに同意しても、それはいつでも撤回することができます。同意を撤回しても、いかなる不利益を受けることはありません。参加に同意した後に、参加途中で撤回する場合は、そのままウェブブラウザを閉じていただけると同意撤回したとみなします。参加途中で参加を撤回された場合は、そのデータをその後の研究で使用いたしません。また、最後まで参加したもののご自身の研究データを研究に使用してほしくない場合は、以下の連絡先にその旨をご連絡いただければ、その後の研究でそのデータを使用いたしません。</p>' +
@@ -50,8 +50,7 @@ var PC_check = {
 var half_check = {
   type: 'survey-text',
   questions: [
-    　{prompt:'<p>この後いくつかデータを入力していただきます。その際<b>半角入力でデータを入力するようお願いします</b>半角入力になっているかを確認してyesと入力して次へ進んでください。</p>',
-      options: ['<span style = "font-size: 14pt">私は半角でデータの入力をします。</span>'],
+    　{prompt:'<p>この後いくつかデータを入力していただきます。その際<b>半角入力でデータを入力するようお願いします</b>半角入力になっているかを確認してyesと入力して次へ進んでください。</p>', columns: 3,
       required: true,
       name: 'approval_2'
   }],
@@ -113,7 +112,7 @@ stimulus: "<p style = 'text-align:left'>これから課題を行ってもらい�
           "<p style = 'text-align:left'>また本課題中は左手中指をR、人差し指をG、右手中指をY、人差し指をBの位置にそれぞれ配置して対応するキーボードを押してください。</p>"+
           "<p style = 'text-align:left'>まず練習を行います。準備ができたら「次」を押して課題を始めてください。</p>",
 choices: '次',
-post_trial_gap:2000
+post_trial_gap:1000
 };
 
 var stimuli = [
@@ -189,6 +188,7 @@ var fixation = {
  choices: jsPsych.NO_KEYS,
  trial_duration: 1000,
  post_trial_gap: 500,
+};
 
 var pre_stroop = {
   timeline: [{
@@ -295,13 +295,13 @@ var  questionnaire_2 = {
  button_label:'次へ',
  on_finish: function(data) {
  data.questionnaire_2_1 = JSON.parse(data.responses).feelings_2_1,
- data.questionnaire_2_2 = JSON.parse(data.responses).feelings_2_2,  
- data.questionnaire_2_3 = JSON.parse(data.responses).feelings_2_3,  
+ data.questionnaire_2_2 = JSON.parse(data.responses).feelings_2_2,
+ data.questionnaire_2_3 = JSON.parse(data.responses).feelings_2_3,
  data.questionnaire_2_4 = JSON.parse(data.responses).feelings_2_4,
  data.questionnaire_2_5 = JSON.parse(data.responses).feelings_2_5,
  data.questionnaire_2_6 = JSON.parse(data.responses).feelings_2_6
   }
-  
+
 };
 
 var  questionnaire_3 = {
@@ -315,7 +315,7 @@ var  questionnaire_3 = {
  data.questionnaire_3_1 = JSON.parse(data.responses).feelings_3_1,
  data.questionnaire_3_2 = JSON.parse(data.responses).feelings_3_2
   }
-  
+
 };
 
 var  questionnaire_4 = {
@@ -339,7 +339,7 @@ var  questionnaire_4 = {
  data.questionnaire_4_1 = JSON.parse(data.responses).feelings_4_1,
  data.questionnaire_4_2 = JSON.parse(data.responses).feelings_4_2,
  data.questionnaire_4_3 = JSON.parse(data.responses).feelings_4_3,
- data.questionnaire_4_4 = JSON.parse(data.responses).feelings_4_4, 
+ data.questionnaire_4_4 = JSON.parse(data.responses).feelings_4_4,
  data.questionnaire_4_5 = JSON.parse(data.responses).feelings_4_5,
  data.questionnaire_4_6 = JSON.parse(data.responses).feelings_4_6,
  data.questionnaire_4_7 = JSON.parse(data.responses).feelings_4_7,
@@ -368,7 +368,7 @@ var　questionnaire_5 = {
  data.questionnaire_5_1 = JSON.parse(data.responses).feelings_5_1,
  data.questionnaire_5_2 = JSON.parse(data.responses).feelings_5_2,
  data.questionnaire_5_3 = JSON.parse(data.responses).feelings_5_3,
- data.questionnaire_5_4 = JSON.parse(data.responses).feelings_5_4, 
+ data.questionnaire_5_4 = JSON.parse(data.responses).feelings_5_4,
  data.questionnaire_5_5 = JSON.parse(data.responses).feelings_5_5,
  data.questionnaire_5_6 = JSON.parse(data.responses).feelings_5_6,
  data.questionnaire_5_7 = JSON.parse(data.responses).feelings_5_7,
