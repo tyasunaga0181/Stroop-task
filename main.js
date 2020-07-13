@@ -1,7 +1,7 @@
 var informedConsent_1 = {
   type: 'html-button-response',
   stimulus:
-      '<span style = "font-size: 16pt"><b>以下の内容をよく読んで、理解した上で実験参加に同意いただける方は次のページの空欄にお名前の入力をお願いします。同意されない方は、ウィンドウを閉じてください。</b></span>'+
+      '<span style = "font-size: 16pt"><b>以下の内容をよく読んで、理解した上で実験参加に同意いただける方は次のページの空欄に氏名の入力をお願いします。同意されない方は、ウィンドウを閉じてください。</b></span>'+
       '<div style = "font-size: 16pt; text-align: left;"><p>この度は本実験に参加していただき、誠にありがとうございます。参加にあたり、以下の説明をお読みください。</p>' +
       '<p><b>1．研究目的</b>' +
       '<br>本研究は、環境が課題成績に与える影響について調査することを目的としております。</p>' +
@@ -25,7 +25,7 @@ var informedConsent_2 = {
       '<p><b>6.研究に関する問い合わせ先</b>' +
       '<br>研究責任者: 及川 昌典(同志社大学心理学部教授) Email: moikawa@mail.doshisha.ac.jp' +
       '<br>研究実施者: 安永 俊樹, 西村 知華, 上田 颯都(同志社大学及川ゼミ) Email: cgvb0181@mail2.doshisha.ac.jp</p></div>'+
-    　'<p>以上の内容に同意していただける方は空欄にお名前を入力して「次へ」を押してください。</p>',
+    　'<p>以上の内容に同意していただける方は空欄に氏名を入力して「次へ」を押してください。</p>',
       columns: 10,
       required: true,
       name: 'participantname'
