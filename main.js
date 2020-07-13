@@ -220,7 +220,7 @@ var go_main = {
   stimulus: "<p style = 'text-align:left'>練習は以上です。ただいまより本番を行ってもらいます。</p>" +
   　　　　　 "<p style = 'text-align:left'>本番の課題は音楽を聴取しながら行っていただきます。</p>" +
             "<p style = 'text-align:left'>Escキー、またはF11キーを押して一旦全画面表示を終了してください。</p>" +
-            "<p style = 'text-align:left'>実験募集メールに記載されたもう一つの実験(実験2https://doshishapsy.qualtrics.com/jfe/form/SV_0GOtaLBz18fASTX)を音量調節を終えるところまで進めてください。</p>" +
+            "<p style = 'text-align:left'>実験募集メールに記載されたもう一つの実験(実験2 https://doshishapsy.qualtrics.com/jfe/form/SV_0GOtaLBz18fASTX)を音量調節を終えるところまで進めてください。</p>" +
             "<p style = 'text-align:left'>音量調節を終えたら<b>音楽を再生している状態で</b>「次」を押して課題を始めてください。</p>",
   choices: '次',
           };
@@ -389,7 +389,7 @@ var finish = {
  stimulus:"<p style = 'text-align:left'>以上で質問紙は終了です。</p>" +
           "<p style = 'text-align:left'>「次」を押すと画面上に本実験のデータが表示されますので</p>"+
           "<p style = 'text-align:left'>そのデータを</p>"+
-          "<p style = 'text-align:left'><b>1,右クリックで「すべて選択」を選択する。</b></p>"+
+          "<p style = 'text-align:left'><b>1,右クリックで「すべて選択」を選択する。WindowsのPCではCtrlキー+A,MacのPCではCommandキー+Aの同時押しでもすべて選択ができます。ドラッグですべて選択することも可能です。</b></p>"+
           "<p style = 'text-align:left'><b>2,もう一度右クリックをしてコピーを選択する。</b></p>"+
           "<p style = 'text-align:left'><b>3,メールを開き,e-classに記載した実験責任者のメールアドレス(cgvb0181@mail2.doshisha.ac.jp)に、右クリックで「貼り付け」を選択してコピーした内容をすべて本文に貼り付けて送信する。</b></p>"+
   　　　　 "<p style = 'text-align:left'>以上の1～3の手順で実験責任者のメールアドレスに必ず送信してください。</p>"+
