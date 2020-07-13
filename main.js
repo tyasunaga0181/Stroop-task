@@ -1,15 +1,22 @@
-var informedConsent = {
-  type: 'survey-text',
-  questions: [{
-      prompt: '<span style = "font-size: 10pt"><b>以上の内容をよく読んで、理解した上で実験参加に同意いただける方は下の空欄にお名前の入力をお願いします。同意されない方は、ウィンドウを閉じてください。</b></span>'+
+var informedConsent_1 = {
+  type: 'html-button-response',
+  stimulus:
+      '<span style = "font-size: 10pt"><b>以上の内容をよく読んで、理解した上で実験参加に同意いただける方は次のページの空欄にお名前の入力をお願いします。同意されない方は、ウィンドウを閉じてください。</b></span>'+
       '<div style = "font-size: 10pt; text-align: left;"><p>この度は本実験に参加していただき、誠にありがとうございます。参加にあたり、以下の説明をスクロールしてお読みください。</p>' +
       '<p><b>1．研究目的</b>' +
       '<br>本研究は、環境が課題成績に与える影響について調査することを目的としております。</p>' +
       '<p><b>2．研究内容</b>' +
       '<br>本研究では、音楽を聴取しながら課題を行っていただき、その後簡単な質問紙に答えていただきます。課題の実行と質問紙は合わせて15分程度で終了します。なお、これから行う質問紙や課題は、あなた個人の性格や能力を個別に評価することを目的とはしておりません。' +
       '<p><b>3.本実験に取り組む環境について</b>' +
-    　'<p>本実験はスマートフォンでは実施できません。必ずPCで行うようにしてください。また、ヘッドホンかイヤホンを着用して課題に取り組んでください。</p>'
-      '<p><b>3．危険性ならびに不利益</b>' +
+    　'<p>本実験はスマートフォンでは実施できません。必ずPCで行うようにしてください。また、ヘッドホンかイヤホンを着用して課題に取り組んでください。課題の途中でウィンドウを閉じたり「戻る」を押すと回答が保存されませんのでお気を付けください。F11キーを押し指示があるまで全画面表示で本実験を進めてください。</p></div>',
+  choices: '次',
+};
+
+var informedConsent_2 = {
+  type: 'survey-text',
+  questions:[{
+    prompt:
+      '<div style = "font-size: 10pt; text-align: left;"><p><b>3．危険性ならびに不利益</b>' +
       '<br>質問紙への回答や課題中、もし不快感を感じることがあったら、ご自身の意志で研究参加をいつでも中止することができます。参加の中止はいつ、いかなる理由でも可能です。また、参加の中止、不参加に伴う不利益は一切生じません。</p>' +
       '<p><b>4．参加者の権利</b>' +
       '<br>本研究の参加は皆様の自由意志によるものです。本研究に参加することに同意しても、それはいつでも撤回することができます。同意を撤回しても、いかなる不利益を受けることはありません。参加に同意した後に、参加途中で撤回する場合は、そのままウェブブラウザを閉じていただけると同意撤回したとみなします。参加途中で参加を撤回された場合は、そのデータをその後の研究で使用いたしません。また、最後まで参加したもののご自身の研究データを研究に使用してほしくない場合は、以下の連絡先にその旨をご連絡いただければ、その後の研究でそのデータを使用いたしません。</p>' +
@@ -17,15 +24,38 @@ var informedConsent = {
       '<br>参加された方の質問紙への回答や課題への反応は全て匿名で扱われ、データからあなたが特定されることはありません。本研究の結果は、学術論文や学会発表などを通じて公表される可能性があります。ただし、その際も統計的に処理した結果のみが公表されるため、特定の個人に焦点を当てた発表は行いません。' +
       '<p><b>6.研究に関する問い合わせ先</b>' +
       '<br>研究責任者: 及川 昌典(同志社大学心理学部教授) Email: moikawa@mail.doshisha.ac.jp' +
-      '<br>研究実施者: 安永 俊樹, 西村 知華, 上田 颯都(同志社大学及川ゼミ) Email: cgvb0181@mail2.doshisha.ac.jp</p></div>',
+      '<br>研究実施者: 安永 俊樹, 西村 知華, 上田 颯都(同志社大学及川ゼミ) Email: cgvb0181@mail2.doshisha.ac.jp</p></div>'+
+    　'<p>以上の内容に同意していただける方は空欄にお名前を入力して「次へ」を押してください。</p>',
       columns: 10,
       required: true,
       name: 'participantname'
   }],
-  button_label: '次へ',
+      button_label: '次へ',
   on_finish: function(data) {
     data.name = JSON.parse(data.responses).participantname
   }
+};
+
+var PC_check = {
+  type: 'survey-multi-select',
+  questions: [
+    　{prompt:'<p>本実験はスマートフォンでは実施できません。必ずPCで行うようにしてください。PCで行っている場合はチェックをお願いします。</p>',
+      options: ['<span style = "font-size: 14pt">私はPCで本実験に参加しています。</span>'],
+      required: true,
+      name: 'approval_2'
+  }],
+  button_label: '次へ'
+};
+
+var half_check = {
+  type: 'survey-text',
+  questions: [
+    　{prompt:'<p>この後いくつかデータを入力していただきます。その際<b>半角入力でデータを入力するようお願いします</b>半角入力になっているかを確認してyesと入力して次へ進んでください。</p>',
+      options: ['<span style = "font-size: 14pt">私は半角でデータの入力をします。</span>'],
+      required: true,
+      name: 'approval_2'
+  }],
+  button_label: '次へ'
 };
 
 var fullscreen = {
@@ -75,14 +105,14 @@ stimulus: "<p style = 'text-align:left'>これから課題を行ってもらい�
           "<p style = 'text-align:left'>この課題では、以下のような色のついた単語を見てもらいます</p>"+
           "<p style='color:red;font-size:80pt;'>あお</p>" +
           "<p style = 'text-align:left'>単語の意味は無視して、それぞれの単語の「色」を以下のキーボードを押して回答してください</p>"+
-          "<p style = 'text-align:left'>・<span style = 'color red'>あか</span>の単語ならRを押す</p>" +
-          "<p style = 'text-align:left'>・<span style = 'color blue'>あお</span>の単語ならBを押す</p>" +
-          "<p style = 'text-align:left'>・<span style = 'color green'>みどり</span>の単語ならGを押す</p>" +
-          "<p style = 'text-align:left'>・<span style = 'color yellow'>きいろ</span>の単語ならYを押す</p>" +
+          "<p style = 'text-align:left'>・<span style = 'color:red'>あか</span>の単語ならRを押す</p>" +
+          "<p style = 'text-align:left'>・<span style = 'color:blue'>あお</span>の単語ならBを押す</p>" +
+          "<p style = 'text-align:left'>・<span style = 'color:green'>みどり</span>の単語ならGを押す</p>" +
+          "<p style = 'text-align:left'>・<span style = 'color:yellow'>きいろ</span>の単語ならYを押す</p>" +
           "<p style = 'text-align:left'>上の例の場合だと、赤色で「あお」と書いてありますので、Rを押してください</p>"+
           "<p style = 'text-align:left'>また本課題中は左手中指をR、人差し指をG、右手中指をY、人差し指をBの位置にそれぞれ配置して対応するキーボードを押してください。</p>"+
-          "<p style = 'text-align:left'>まず練習を行います。準備ができたら「次へ」を押して課題を始めてください。</p>",
-choices: '次へ',
+          "<p style = 'text-align:left'>まず練習を行います。準備ができたら「次」を押して課題を始めてください。</p>",
+choices: '次',
 post_trial_gap:2000
 };
 
@@ -158,31 +188,42 @@ var fixation = {
  stimulus: '<div style="font-size:60px;">+</div>',
  choices: jsPsych.NO_KEYS,
  trial_duration: 1000,
- post_trial_gap: 1000,
-};
+ post_trial_gap: 500,
 
 var pre_stroop = {
   timeline: [{
   type: "html-keyboard-response",
   stimulus: jsPsych.timelineVariable('stimulus'),
-  post_trial_gap:1000,
+  post_trial_gap:500,
   prompt: '<p>赤色ならR,  青色ならB,  緑色ならG,  黄色ならY</p>',
   choices: [82, 66, 89, 71],
   }],
-  timeline_variables:stimuli,
-  sample: {type: 'fixed-repetitions',size: 2}
+};
+
+var pre_procedure = {
+  timeline: [fixation, pre_stroop],
+  timeline_variables: stimuli,
+  repetitions: 2,
+  randomize_order: true
 };
 
 var go_main = {
   type: 'html-button-response',
   stimulus: "<p style = 'text-align:left'>練習は以上です。ただいまより本番を行ってもらいます。</p>" +
   　　　　　 "<p style = 'text-align:left'>本番の課題は音楽を聴取しながら行っていただきます。</p>" +
-            "<p style = 'text-align:left'>実験募集メールに記載されたもう一つの実験(実験2)を音量調節を終えるところまで進めてください。。</p>" +
-            "<p style = 'text-align:left'>準備ができたら<b>音楽を再生している状態で</b>「次へ」を押して課題を始めてください。</p>",
-  choices: '次へ',
+            "<p style = 'text-align:left'>Escキー、またはF11キーを押して一旦全画面表示を終了してください。</p>" +
+            "<p style = 'text-align:left'>実験募集メールに記載されたもう一つの実験(実験2https://doshishapsy.qualtrics.com/jfe/form/SV_0GOtaLBz18fASTX)を音量調節を終えるところまで進めてください。。</p>" +
+            "<p style = 'text-align:left'>音量調節を終えたら<b>音楽を再生している状態で</b>「次」を押して課題を始めてください。</p>",
+  choices: '次',
           };
 
-
+var fullscreen_2 = {
+  type: 'fullscreen',
+  message: "<p style = 'text-align:left'>以下のボタンをクリックすると，画面が全画面表示に切り替わり課題が開始されます。</p>" +
+           "<p style = 'text-align:left'>指示があるまで全画面表示をやめないようにしてください。</p>",
+  button_label: "全画面表示に切り替え",
+  fullscreen_mode: true
+};
 
 var main_stroop = {
   timeline: [{
@@ -192,7 +233,6 @@ var main_stroop = {
   prompt: '<p>赤色ならR,  青色ならB,  緑色ならG,  黄色ならY</p>',
   choices: [82, 66, 89, 71],
   }],
-  timeline_variables:stimuli,
   data: jsPsych.timelineVariable('data'),
   on_finish: function(data){
     var correct = 0;
@@ -201,7 +241,13 @@ var main_stroop = {
     }
     data.correct = correct;
   },
-  sample: {type: 'fixed-repetitions',size: 6}
+};
+
+var main_procedure = {
+  timeline: [fixation, main_stroop],
+  timeline_variables: stimuli,
+  repetitions: 6,
+  randomize_order: true
 };
 
 var lead_questionnaire = {
@@ -209,8 +255,8 @@ var lead_questionnaire = {
   stimulus: "<p style = 'text-align:left'>以上で課題は終了です。</p>" +
           "<p style = 'text-align:left'>続いて質問紙に回答していただきます。</p>"+
            "<p style = 'text-align:left'>ヘッドホン,イヤホンを外して下さい。</p>" +
-          "<p style = 'text-align:left'>上記の準備が終了したら「次へ」を押し、質問紙の回答に進んでください。</p>",
-  choices: '次へ',
+          "<p style = 'text-align:left'>ヘッドホン,イヤホンを外したら「次」を押し、質問紙の回答に進んでください。</p>",
+  choices: '次',
 };
 
 var scale1 = ["音楽を<br>聴取しなかった","非常に<br>当てはまる", "かなり<br>当てはまる", "やや<br>当てはまる", "どちらでもない", "やや<br>当てはまらない", "かなり<br>当てはまらない", "非常に<br>当てはまらない"];
@@ -271,8 +317,6 @@ var  questionnaire_3 = {
   }
   
 };
-
-var scale_4_1 = ["音楽を<br>聴取しなかった","非常に<br>当てはまる", "かなり<br>当てはまる", "やや<br>当てはまる", "どちらでもない", "やや<br>当てはまらない", "かなり<br>当てはまらない", "非常に<br>当てはまらない"];
 
 var  questionnaire_4 = {
  type: 'survey-likert',
@@ -340,24 +384,27 @@ var finish = {
           "<p style = 'text-align:left'><b>1,右クリックで「すべて選択」を選択する。</b></p>"+
           "<p style = 'text-align:left'><b>2,もう一度右クリックをしてコピーを選択する。</b></p>"+
           "<p style = 'text-align:left'><b>3,メールを開き,e-classに記載した実験責任者のメールアドレス(cgvb0181@mail2.doshisha.ac.jp)に、右クリックで「貼り付け」を選択してコピーした内容をすべて本文に貼り付けて送信する。</b></p>"+
-  　　　　 "<p style = 'text-align:left'>以上の1~3の手順で実験責任者のメールアドレスに必ず送信してください。</p>"+
+  　　　　 "<p style = 'text-align:left'>以上の1～3の手順で実験責任者のメールアドレスに必ず送信してください。</p>"+
   　　　　 "<p style = 'text-align:left'>なお、<b>連絡がなかった場合参加点を付与することができませんので必ずメールを送っていただきますようよろしくお願いします。</b></p>"+
-          "<p style = 'text-align:left'>メールの送信をもって実験終了となりますので、メールを送信された方はウィンドウを閉じていただいて構いません、</p>"+
+  　　　　 "<p style = 'text-align:left'>次のページに進むとこのページに戻ることはできません。手順が不安な方は写真やスクリーンショットを撮ってこの画面を記録しておくようにしてください。</p>"+
+          "<p style = 'text-align:left'>メールの送信をもって実験終了となりますので、メールを送信された方はEscキーを押して全画面表示を終了しウィンドウを閉じていただいて構いません、</p>"+
           "<p style = 'text-align:left'>本日は実験に参加していただきありがとうございました。</p>"
          };
 
 var timeline = [];
-timeline.push(informedConsent);
+timeline.push(informedConsent_1);
+timeline.push(informedConsent_2);
+timeline.push(PC_check);
+timeline.push(half_check);
+timeline.push(fullscreen);
 timeline.push(par_id);
 timeline.push(age);
 timeline.push(gender);
 timeline.push(instructions);
-timeline.push(fixation);
-timeline.push(pre_stroop);
+timeline.push(pre_procedure);
 timeline.push(go_main);
-timeline.push(fullscreen);
-timeline.push(fixation);
-timeline.push(main_stroop);
+timeline.push(fullscreen_2);
+timeline.push(main_procedure);
 timeline.push(lead_questionnaire);
 timeline.push(questionnaire_1);
 timeline.push(questionnaire_2);
