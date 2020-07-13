@@ -348,7 +348,6 @@ var finish = {
 
 var timeline = [];
 timeline.push(informedConsent);
-timeline.push(PC_check);
 timeline.push(par_id);
 timeline.push(age);
 timeline.push(gender);
