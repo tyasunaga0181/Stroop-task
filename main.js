@@ -36,18 +36,6 @@ var fullscreen = {
   fullscreen_mode: true
 };
 
-var PC_check = {
-  type: 'survey-multi-select',
-  questions: [
-    　{prompt:'<p>本実験はスマートフォンでは実施できません。必ずPCで行うようにしてください。PCで行っている場合はチェックをお願いします。</p>',
-      options: ['<span style = "font-size: 14pt">私はPCで本実験に参加しています。</span>'],
-      required: true,
-      name: 'approval_2'
-  }],
-  button_label: '次へ'
-};
-
-
 var par_id = {
   type: 'survey-text',
   questions: [
@@ -225,27 +213,17 @@ var lead_questionnaire = {
   choices: '次へ',
 };
 
-var scale_1 = ["音楽を<br>聴取しなかった","非常に<br>愉快", "かなり<br>愉快", "やや<br>愉快", "どちらでもない", "やや<br>不快", "かなり<br>不快", "非常に<br>不快"];
-
-var scale_2 = ["音楽を<br>聴取しなかった","非常に<br>気持ちがよくなる", "かなり<br>気持ちがよくなる", "やや<br>気持ちがよくなる", "どちらでもない", "やや<br>気持ちが悪くなる", "かなり<br>気持ちが悪くなる", "非常に<br>気持ちが悪くなる"];
-
-var scale_3 = ["音楽を<br>聴取しなかった","非常に<br>元気が出る", "かなり<br>元気が出る", "やや<br>元気が出る", "どちらでもない", "やや<br>気持ちが落ち込む", "かなり<br>気持ちが落ち込む", "非常に<br>気持ちが落ち込む"];
-
-var scale_4 = ["音楽を<br>聴取しなかった","非常に<br>騒々しい", "かなり<br>騒々しい", "やや<br>騒々しい", "どちらでもない", "やや<br>穏やか", "かなり<br>穏やか", "非常に<br>穏やか"];
-
-var scale_5 = ["音楽を<br>聴取しなかった","非常に<br>楽", "かなり<br>楽", "やや<br>楽", "どちらでもない", "やや<br>疲れる", "かなり<br>疲れる", "非常に<br>疲れる"];
-
-var scale_6 = ["音楽を<br>聴取しなかった","非常に<br>積極的な気分", "かなり<br>積極的な気分", "やや<br>積極的な気分", "どちらでもない", "やや<br>消極的な気分", "かなり<br>消極的な気分", "非常に<br>消極的な気分"];
+var scale1 = ["音楽を<br>聴取しなかった","非常に<br>当てはまる", "かなり<br>当てはまる", "やや<br>当てはまる", "どちらでもない", "やや<br>当てはまらない", "かなり<br>当てはまらない", "非常に<br>当てはまらない"];
 
 var questionnaire_1 = {
   type: 'survey-likert',
   questions: [
-    {prompt: "音楽を聴いていた時の気分は", name: 'feelings_1_1', labels: scale_1, required: true},
-    {prompt: "音楽を聴いていた時の気分は", name: 'feelings_1_2', labels: scale_2, required: true},
-    {prompt: "音楽を聴いていた時の気分は", name: 'feelings_1_3', labels: scale_3, required: true},
-    {prompt: "音楽を聴いていた時の気分は", name: 'feelings_1_4', labels: scale_4, required: true},
-    {prompt: "音楽を聴いていた時の気分は", name: 'feelings_1_5', labels: scale_5, required: true},
-    {prompt: "音楽を聴いていた時の気分は", name: 'feelings_1_6', labels: scale_6, required: true},
+    {prompt: "音楽を聴いていて愉快な気分になった", name: 'feelings_1_1', labels: scale_1, required: true},
+    {prompt: "音楽を聴いていて気持ちがよくなった", name: 'feelings_1_2', labels: scale_1, required: true},
+    {prompt: "音楽を聴いていて元気が出た", name: 'feelings_1_3', labels: scale_1, required: true},
+    {prompt: "音楽を聴いていて騒々しいと感じた", name: 'feelings_1_4', labels: scale_1, required: true},
+    {prompt: "音楽を聴いていて疲れた", name: 'feelings_1_5', labels: scale_1, required: true},
+    {prompt: "音楽を聴いていて積極的な気分になった", name: 'feelings_1_6', labels: scale_1, required: true},
 ],
   button_label:'次へ',
   on_finish: function(data) {
@@ -258,28 +236,15 @@ var questionnaire_1 = {
   }
 };
 
-var scale_2_1 = ["音楽を<br>聴取しなかった","非常に<br>心地よい", "かなり<br>心地よい", "やや<br>心地よい", "どちらでもない", "やや<br>心地悪い", "かなり<br>心地悪い", "非常に<br>心地悪い"];
-
-var scale_2_2 = ["音楽を<br>聴取しなかった","非常に<br>目がさえる", "かなり<br>目がさえる", "やや<br>目がさえる", "どちらでもない", "やや<br>眠くなる", "かなり<br>眠くなる", "非常に<br>眠くなる"];
-
-var scale_2_3 = ["音楽を<br>聴取しなかった","非常に<br>落ち着く", "かなり<br>落ち着く", "やや<br>落ち着く", "どちらでもない", "やや<br>イライラする", "かなり<br>イライラする", "非常に<br>イライラする"];
-
-var scale_2_4 = ["音楽を<br>聴取しなかった","非常に<br>緊張する", "かなり<br>緊張する", "やや<br>緊張する", "どちらでもない", "やや<br>リラックスする", "かなり<br>リラックスする", "非常に<br>リラックスする"];
-
-var scale_2_5 = ["音楽を<br>聴取しなかった","非常に<br>楽", "かなり<br>楽", "やや<br>楽", "どちらでもない", "やや<br>疲れる", "かなり<br>疲れる", "非常に<br>疲れる"];
-
-var scale_2_6 = ["音楽を<br>聴取しなかった","非常に<br>不安", "かなり<br>不安", "やや<br>不安", "どちらでもない", "やや<br>安心", "かなり<br>安心", "非常に<br>安心"];
-
-
 var  questionnaire_2 = {
  type: 'survey-likert',
  questions: [
-   {prompt: "音楽を聴いていた時の心身の自覚は", name: 'feelings_2_1', labels: scale_2_1, required: true},
-   {prompt: "音楽を聴いていた時の心身の自覚は", name: 'feelings_2_2', labels: scale_2_2, required: true},
-   {prompt: "音楽を聴いていた時の心身の自覚は", name: 'feelings_2_3', labels: scale_2_3, required: true},
-   {prompt: "音楽を聴いていた時の心身の自覚は", name: 'feelings_2_4', labels: scale_2_4, required: true},
-   {prompt: "音楽を聴いていた時の心身の自覚は", name: 'feelings_2_5', labels: scale_2_5, required: true},
-   {prompt: "音楽を聴いていた時の心身の自覚は", name: 'feelings_2_6', labels: scale_2_6, required: true},
+   {prompt: "音楽を聴いていた時、心地が良かった", name: 'feelings_2_1', labels: scale_1, required: true},
+   {prompt: "音楽を聴いていた時、目がさえた", name: 'feelings_2_2', labels: scale_1, required: true},
+   {prompt: "音楽を聴いていた時、落ち着いた", name: 'feelings_2_3', labels: scale_1, required: true},
+   {prompt: "音楽を聴いていた時、緊張した", name: 'feelings_2_4', labels: scale_1, required: true},
+   {prompt: "音楽を聴いていた時、楽だと感じた", name: 'feelings_2_5', labels: scale_1, required: true},
+   {prompt: "音楽を聴いていた時、不安を感じた", name: 'feelings_2_6', labels: scale_1, required: true},
 ],
  button_label:'次へ',
  on_finish: function(data) {
@@ -293,15 +258,11 @@ var  questionnaire_2 = {
   
 };
 
-var scale_3_1 = ["音楽を<br>聴取しなかった","非常に<br>好き", "かなり<br>好き", "やや<br>好き", "どちらでもない", "やや<br>嫌い", "かなり<br>嫌い", "非常に<br>嫌い"];
-
-var scale_3_2 = ["音楽を<br>聴取しなかった","非常に<br>遅い", "かなり<br>遅い", "やや<br>遅い", "どちらでもない", "やや<br>速い", "かなり<br>速い", "非常に<br>速い"];
-
 var  questionnaire_3 = {
  type: 'survey-likert',
  questions: [
-   {prompt: "音楽の印象は", name: 'feelings_3_1', labels: scale_3_1, required: true},
-   {prompt: "音楽の印象は", name: 'feelings_3_2', labels: scale_3_2, required: true},
+   {prompt: "聴取した音楽は好きだった", name: 'feelings_3_1', labels: scale_1, required: true},
+   {prompt: "聴取した音楽を遅いと感じた", name: 'feelings_3_2', labels: scale_1, required: true},
 ],
  button_label:'次へ',
  on_finish: function(data) {
@@ -316,18 +277,18 @@ var scale_4_1 = ["音楽を<br>聴取しなかった","非常に<br>当てはま
 var  questionnaire_4 = {
  type: 'survey-likert',
  questions: [
-   {prompt: "音楽に明るい印象を持った", name: 'feelings_4_1', labels: scale_4_1, required: true},
-   {prompt: "音楽に悲しい印象を持った", name: 'feelings_4_2', labels: scale_4_1, required: true},
-   {prompt: "音楽に優しい印象を持った", name: 'feelings_4_3', labels: scale_4_1, required: true},
-   {prompt: "音楽に刺激的な印象を持った", name: 'feelings_4_4', labels: scale_4_1, required: true},
-   {prompt: "音楽に浮かれた印象を持った", name: 'feelings_4_5', labels: scale_4_1, required: true},
-   {prompt: "音楽に厳かな印象を持った", name: 'feelings_4_6', labels: scale_4_1, required: true},
-   {prompt: "音楽に楽しい印象を持った", name: 'feelings_4_7', labels: scale_4_1, required: true},
-   {prompt: "音楽に暗い印象を持った", name: 'feelings_4_8', labels: scale_4_1, required: true},
-   {prompt: "音楽に穏やかな印象を持った", name: 'feelings_4_9', labels: scale_4_1, required: true},
-   {prompt: "音楽に強い印象を持った", name: 'feelings_4_10', labels: scale_4_1, required: true},
-   {prompt: "音楽に落ち着きのない印象を持った", name: 'feelings_4_11', labels: scale_4_1, required: true},
-   {prompt: "音楽に気高い印象を持った", name: 'feelings_4_12', labels: scale_4_1, required: true},
+   {prompt: "音楽に明るい印象を持った", name: 'feelings_4_1', labels: scale_1, required: true},
+   {prompt: "音楽に悲しい印象を持った", name: 'feelings_4_2', labels: scale_1, required: true},
+   {prompt: "音楽に優しい印象を持った", name: 'feelings_4_3', labels: scale_1, required: true},
+   {prompt: "音楽に刺激的な印象を持った", name: 'feelings_4_4', labels: scale_1, required: true},
+   {prompt: "音楽に浮かれた印象を持った", name: 'feelings_4_5', labels: scale_1, required: true},
+   {prompt: "音楽に厳かな印象を持った", name: 'feelings_4_6', labels: scale_1, required: true},
+   {prompt: "音楽に楽しい印象を持った", name: 'feelings_4_7', labels: scale_1, required: true},
+   {prompt: "音楽に暗い印象を持った", name: 'feelings_4_8', labels: scale_1, required: true},
+   {prompt: "音楽に穏やかな印象を持った", name: 'feelings_4_9', labels: scale_1, required: true},
+   {prompt: "音楽に強い印象を持った", name: 'feelings_4_10', labels: scale_1, required: true},
+   {prompt: "音楽に落ち着きのない印象を持った", name: 'feelings_4_11', labels: scale_1, required: true},
+   {prompt: "音楽に気高い印象を持った", name: 'feelings_4_12', labels: scale_1, required: true},
  ],
  button_label:'次へ',
  on_finish: function(data) {
@@ -346,34 +307,17 @@ var  questionnaire_4 = {
   }
 };
 
-var scale_5_1 = ["非常に<br>楽しかった", "かなり<br>楽しかった", "やや<br>楽しかった", "どちらでもない", "やや<br>辛かった", "かなり<br>辛かった", "非常に<br>辛かった"];
-
-var scale_5_2 = ["非常に<br>長く感じた", "かなり<br>長く感じた", "やや<br>長く感じた", "どちらでもない", "やや<br>短く感じた", "かなり<br>短く感じた", "非常に<br>短く感じた"];
-
-var scale_5_3 = ["非常に<br>落ち着いてできた", "かなり<br>落ち着いてできた", "やや<br>落ち着いてできた", "どちらでもない", "やや<br>イライラした", "かなり<br>イライラした", "非常に<br>イライラした"];
-
-var scale_5_4 = ["非常に<br>面白かった", "かなり<br>面白かった", "やや<br>面白かった", "どちらでもない", "やや<br>つまらなかった", "かなり<br>つまらなかった", "非常に<br>つまらなかった"];
-
-var scale_5_5 = ["非常に<br>好き", "かなり<br>好き", "やや<br>好き", "どちらでもない", "やや<br>嫌い", "かなり<br>嫌い", "非常に<br>嫌い"];
-
-var scale_5_6 = ["非常に<br>集中してできた", "かなり<br>集中してできた", "やや<br>集中してできた", "どちらでもない", "やや<br>気が散った", "かなり<br>気が散った", "非常に<br>気が散った"];
-
-var scale_5_7 = ["非常に<br>心地よかった", "かなり<br>心地よかった", "やや<br>心地よかった", "どちらでもない", "やや<br>不快だった", "かなり<br>不快だった", "非常に<br>不快だった"];
-
-var scale_5_8 = ["非常に<br>緊張した", "かなり<br>緊張した", "やや<br>緊張した", "どちらでもない", "やや<br>リラックスしてできた", "かなり<br>リラックスしてできた", "非常に<br>リラックスしてできた"];
-
-
 var　questionnaire_5 = {
  type: 'survey-likert',
  questions: [
-   {prompt: "本実験で行った課題は", name: 'feelings_5_1', labels: scale_5_1, required: true},
-   {prompt: "本実験で行った課題は", name: 'feelings_5_2', labels: scale_5_2, required: true},
-   {prompt: "本実験で行った課題は", name: 'feelings_5_3', labels: scale_5_3, required: true},
-   {prompt: "本実験で行った課題は", name: 'feelings_5_4', labels: scale_5_4, required: true},
-   {prompt: "本実験で行った課題は", name: 'feelings_5_5', labels: scale_5_5, required: true},
-   {prompt: "本実験で行った課題は", name: 'feelings_5_6', labels: scale_5_6, required: true},
-   {prompt: "本実験で行った課題は", name: 'feelings_5_7', labels: scale_5_7, required: true},
-   {prompt: "本実験で行った課題は", name: 'feelings_5_8', labels: scale_5_8, required: true},
+   {prompt: "本実験で行った課題は楽しかった", name: 'feelings_5_1', labels: scale_1, required: true},
+   {prompt: "本実験で行った課題は長く感じた", name: 'feelings_5_2', labels: scale_1, required: true},
+   {prompt: "本実験で行った課題は落ち着いてできた", name: 'feelings_5_3', labels: scale_1, required: true},
+   {prompt: "本実験で行った課題は面白かった", name: 'feelings_5_4', labels: scale_1, required: true},
+   {prompt: "本実験で行った課題は好きだった", name: 'feelings_5_5', labels: scale_1, required: true},
+   {prompt: "本実験で行った課題は集中してできた", name: 'feelings_5_6', labels: scale_1, required: true},
+   {prompt: "本実験で行った課題は心地よかった", name: 'feelings_5_7', labels: scale_1, required: true},
+   {prompt: "本実験で行った課題は緊張した", name: 'feelings_5_8', labels: scale_1, required: true},
  ],
  button_label:'次へ',
  on_finish: function(data) {
@@ -392,9 +336,12 @@ var finish = {
  type: 'html-keyboard-response',
  stimulus:"<p style = 'text-align:left'>以上で質問紙は終了です。</p>" +
           "<p style = 'text-align:left'>いずれかのキーを押すと画面上に本実験のデータが表示されますので</p>"+
-          "<p style = 'text-align:left'>そのデータを<b>すべてコピーし実験募集のメールに記載された連絡先(cgvb0181@mail2.doshisha.ac.jp)にすべて貼り付けて送ってください。</b></p>"+
-          "<p style = 'text-align:left'>その連絡をもって実験に参加していただいたことを確認するため、</p>"+
-  　　　　 "<p style = 'text-align:left'><b>連絡がなかった場合参加点を付与することができませんので必ずメールを送っていただきますようよろしくお願いします。</b></p>"+
+          "<p style = 'text-align:left'>そのデータを</p>"+
+          "<p style = 'text-align:left'><b>1,右クリックで「すべて選択」を選択する。</b></p>"+
+          "<p style = 'text-align:left'><b>2,もう一度右クリックをしてコピーを選択する。</b></p>"+
+          "<p style = 'text-align:left'><b>3,メールを開き,e-classに記載した実験責任者のメールアドレス(cgvb0181@mail2.doshisha.ac.jp)に、右クリックで「貼り付け」を選択してコピーした内容をすべて本文に貼り付けて送信する。</b></p>"+
+  　　　　 "<p style = 'text-align:left'>以上の1~3の手順で実験責任者のメールアドレスに必ず送信してください。</p>"+
+  　　　　 "<p style = 'text-align:left'>なお、<b>連絡がなかった場合参加点を付与することができませんので必ずメールを送っていただきますようよろしくお願いします。</b></p>"+
           "<p style = 'text-align:left'>メールの送信をもって実験終了となりますので、メールを送信された方はウィンドウを閉じていただいて構いません、</p>"+
           "<p style = 'text-align:left'>本日は実験に参加していただきありがとうございました。</p>"
          };
