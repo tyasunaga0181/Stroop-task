@@ -111,7 +111,6 @@ stimulus: "<p style = 'text-align:left'>これから課題を行ってもらい�
           "<p style = 'text-align:left'>上の例の場合だと、赤色で「あお」と書いてありますので、Rを押してください</p>"+
           "<p style = 'text-align:left'>また本課題中は左手中指をR、人差し指をG、右手中指をY、人差し指をBの位置にそれぞれ配置して対応するキーボードを押してください。</p>",
 choices: '次',
-post_trial_gap:1000
 };
 
 var instructions_2 = {
