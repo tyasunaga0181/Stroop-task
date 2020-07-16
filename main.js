@@ -255,7 +255,7 @@ var lead_questionnaire = {
   choices: '次',
 };
 
-var scale_1 = ["全くbr>当てはまらない", "かなり<br>当てはまらない", "やや<br>当てはまらない", "どちらでもない", "やや<br>当てはまる", "かなり<br>当てはまる", "非常に<br>当てはまる"];
+var scale_1 = ["全く<br>当てはまらない", "かなり<br>当てはまらない", "やや<br>当てはまらない", "どちらでもない", "やや<br>当てはまる", "かなり<br>当てはまる", "非常に<br>当てはまる"];
 
 var questionnaire_1 = {
   type: 'survey-likert',
