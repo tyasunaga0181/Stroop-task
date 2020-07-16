@@ -1,7 +1,7 @@
 var informedConsent_1 = {
   type: 'html-button-response',
   stimulus:
-      '<span style = "font-size: 16pt"><b>以下の内容をよく読んで、理解した上で実験参加に同意いただける方は次のページの空欄に氏名の入力をお願いします。同意されない方は、ウィンドウを閉じてください。</b></span>'+
+      '<span style = "font-size: 16pt"><b>以下の内容をよく読んで、理解した上で実験参加に同意いただける方は次のページのチェックボックスにチェックをお願いします。同意されない方は、ウィンドウを閉じてください。</b></span>'+
       '<div style = "font-size: 16pt; text-align: left;"><p>この度は本実験に参加していただき、誠にありがとうございます。参加にあたり、以下の説明をお読みください。</p>' +
       '<p><b>1．研究目的</b>' +
       '<br>本研究は、環境が課題成績に与える影響について調査することを目的としております。</p>' +
@@ -13,7 +13,7 @@ var informedConsent_1 = {
 };
 
 var informedConsent_2 = {
-  type: 'survey-text',
+  type: 'survey-multi-select',
   questions:[{
     prompt:
       '<div style = "font-size: 16pt; text-align: left;"><p><b>3．危険性ならびに不利益</b>' +
@@ -25,10 +25,11 @@ var informedConsent_2 = {
       '<p><b>6.研究に関する問い合わせ先</b>' +
       '<br>研究責任者: 及川 昌典(同志社大学心理学部教授) Email: moikawa@mail.doshisha.ac.jp' +
       '<br>研究実施者: 安永 俊樹, 西村 知華, 上田 颯都(同志社大学及川ゼミ) Email: cgvb0181@mail2.doshisha.ac.jp</p></div>'+
-    　'<p>以上の内容に同意していただける方は空欄に氏名を入力して「次へ」を押してください。</p>',
+    　'<p>以上の内容に同意していただける方はチェックボックスにチェックをして「次へ」を押してください。</p>',
       columns: 10,
       required: true,
-      name: 'participantname'
+      name: 'approval',
+  options: ['<span style = "font-size: 14pt">説明事項をよく読み，理解した上で，研究参加に同意します。</span>']
   }],
       button_label: '次へ',
   on_finish: function(data) {
@@ -99,7 +100,7 @@ var gender = {
 };
 
 var instructions = {
-type: 'html-button-response',
+type: 'html-keyboard-response',
 stimulus: "<p style = 'text-align:left'>これから課題を行ってもらいます</p>" +
           "<p style = 'text-align:left'>この課題では、以下のような色のついた単語を見てもらいます</p>"+
           "<p style='color:red;font-size:80pt;'>あお</p>" +
@@ -109,17 +110,18 @@ stimulus: "<p style = 'text-align:left'>これから課題を行ってもらい�
           "<p style = 'text-align:left'>・<span style = 'color:green'>みどり</span>の単語ならGを押す</p>" +
           "<p style = 'text-align:left'>・<span style = 'color:yellow'>きいろ</span>の単語ならYを押す</p>" +
           "<p style = 'text-align:left'>上の例の場合だと、赤色で「あお」と書いてありますので、Rを押してください</p>"+
-          "<p style = 'text-align:left'>また本課題中は左手中指をR、人差し指をG、右手中指をY、人差し指をBの位置にそれぞれ配置して対応するキーボードを押してください。</p>",
-choices: '次',
+          "<p style = 'text-align:left'>また本課題中は左手中指をR、人差し指をG、右手中指をY、人差し指をBの位置にそれぞれ配置して対応するキーボードを押してください。</p>"+
+          "<p style = 'text-align:left'>「R,G,Y,B」のいずれかのキーを押すと次に進みます。</p>",
+choices: [82, 66, 89, 71],
 };
 
 var instructions_2 = {
-type: 'html-button-response',
+type: 'html-ketboard-response',
   stimulus: "<p style = 'text-align:left'>また、課題中は色のついた文字を表示していない間画面中央に</p>" +
   　　　　　 '<div style="font-size:60px;">+</div>'+
             "<p style = 'text-align:left'>上記のような十字が表示されます。課題中はこの十字を視界の中心で捉えるようにしてください。</p>"+
-            "<p style = 'text-align:left'>「次」を押すと課題の練習が開始されます。</p>" ,
-choices: '次',
+            "<p style = 'text-align:left'>「R,G,Y,B」のいずれかのキーを押すと課題の練習が開始されます。</p>" ,
+choices: [82, 66, 89, 71],
 post_trial_gap:1000
 };
   
@@ -216,22 +218,12 @@ var pre_procedure = {
 };
 
 var go_main = {
-  type: 'html-button-response',
+  type: 'html-keyboard-response',
   stimulus: "<p style = 'text-align:left'>練習は以上です。ただいまより本番を行ってもらいます。</p>" +
-  　　　　　 "<p style = 'text-align:left'>本番の課題は音楽を聴取しながら行っていただきます。</p>" +
-            "<p style = 'text-align:left'>Escキー、またはF11キーを押して一旦全画面表示を終了してください。</p>" +
-            "<p style = 'text-align:left'>実験募集メールに記載されたもう一つの実験(実験2 https://doshishapsy.qualtrics.com/jfe/form/SV_0GOtaLBz18fASTX)を音量調節を終えるところまで進めてください。</p>" +
-            "<p style = 'text-align:left'>音量調節を終えたら<b>音楽を再生している状態で</b>「次」を押して課題を始めてください。</p>",
-  choices: '次',
+            "<p style = 'text-align:left'>「R,G,Y,B」のいずれかのキーを押して課題を始めてください。</p>",
+  choices: [82, 66, 89, 71],
           };
 
-var fullscreen_2 = {
-  type: 'fullscreen',
-  message: "<p style = 'text-align:left'>以下のボタンをクリックすると，画面が全画面表示に切り替わり課題が開始されます。</p>" +
-           "<p style = 'text-align:left'>指示があるまで全画面表示をやめないようにしてください。</p>",
-  button_label: "全画面表示に切り替え",
-  fullscreen_mode: true
-};
 
 var main_stroop = {
   timeline: [{
@@ -259,105 +251,18 @@ var main_procedure = {
 };
 
 var lead_questionnaire = {
-  type: 'html-button-response',
+  type: 'html-keyboard-response',
   stimulus: "<p style = 'text-align:left'>以上で課題は終了です。</p>" +
           "<p style = 'text-align:left'>続いて質問紙に回答していただきます。</p>" +
            "<p style = 'text-align:left'>ヘッドホン,イヤホンを外して下さい。</p>" +
-          "<p style = 'text-align:left'>ヘッドホン,イヤホンを外したら「次」を押し、質問紙の回答に進んでください。</p>",
-  choices: '次',
+          "<p style = 'text-align:left'>ヘッドホン,イヤホンを外したら「R,G,Y,B」のいずれかのキーを押し、質問紙の回答に進んでください。</p>",
+choices: [82, 66, 89, 71],
 };
 
-var scale_1 = ["音楽を<br>聴取しなかった","非常に<br>当てはまる", "かなり<br>当てはまる", "やや<br>当てはまる", "どちらでもない", "やや<br>当てはまらない", "かなり<br>当てはまらない", "非常に<br>当てはまらない"];
+var scale_1 = ["全く<br>当てはまらない", "かなり<br>当てはまらない", "やや<br>当てはまらない", "どちらでもない", "やや<br>当てはまる", "かなり<br>当てはまる", "非常に<br>当てはまる"];
 
-var questionnaire_1 = {
-  type: 'survey-likert',
-  questions: [
-    {prompt: "音楽を聴いていて愉快な気分になった", name: 'feelings_1_1', labels: scale_1, required: true},
-    {prompt: "音楽を聴いていて気持ちがよくなった", name: 'feelings_1_2', labels: scale_1, required: true},
-    {prompt: "音楽を聴いていて元気が出た", name: 'feelings_1_3', labels: scale_1, required: true},
-    {prompt: "音楽を聴いていて騒々しいと感じた", name: 'feelings_1_4', labels: scale_1, required: true},
-    {prompt: "音楽を聴いていて疲れた", name: 'feelings_1_5', labels: scale_1, required: true},
-    {prompt: "音楽を聴いていて積極的な気分になった", name: 'feelings_1_6', labels: scale_1, required: true},
-],
-  button_label:'次へ',
-  on_finish: function(data) {
-  data.questionnaire_1_1 = JSON.parse(data.responses).feelings_1_1,
-  data.questionnaire_1_2 = JSON.parse(data.responses).feelings_1_2,
-  data.questionnaire_1_3 = JSON.parse(data.responses).feelings_1_3,
-  data.questionnaire_1_4 = JSON.parse(data.responses).feelings_1_4,
-  data.questionnaire_1_5 = JSON.parse(data.responses).feelings_1_5,
-  data.questionnaire_1_6 = JSON.parse(data.responses).feelings_1_6
-  }
-};
 
-var  questionnaire_2 = {
- type: 'survey-likert',
- questions: [
-   {prompt: "音楽を聴いていた時、心地が良かった", name: 'feelings_2_1', labels: scale_1, required: true},
-   {prompt: "音楽を聴いていた時、目がさえた", name: 'feelings_2_2', labels: scale_1, required: true},
-   {prompt: "音楽を聴いていた時、落ち着いた", name: 'feelings_2_3', labels: scale_1, required: true},
-   {prompt: "音楽を聴いていた時、緊張した", name: 'feelings_2_4', labels: scale_1, required: true},
-   {prompt: "音楽を聴いていた時、楽だと感じた", name: 'feelings_2_5', labels: scale_1, required: true},
-   {prompt: "音楽を聴いていた時、不安を感じた", name: 'feelings_2_6', labels: scale_1, required: true},
-],
- button_label:'次へ',
- on_finish: function(data) {
- data.questionnaire_2_1 = JSON.parse(data.responses).feelings_2_1,
- data.questionnaire_2_2 = JSON.parse(data.responses).feelings_2_2,
- data.questionnaire_2_3 = JSON.parse(data.responses).feelings_2_3,
- data.questionnaire_2_4 = JSON.parse(data.responses).feelings_2_4,
- data.questionnaire_2_5 = JSON.parse(data.responses).feelings_2_5,
- data.questionnaire_2_6 = JSON.parse(data.responses).feelings_2_6
-  }
-
-};
-
-var  questionnaire_3 = {
- type: 'survey-likert',
- questions: [
-   {prompt: "聴取した音楽は好きだった", name: 'feelings_3_1', labels: scale_1, required: true},
-   {prompt: "聴取した音楽を遅いと感じた", name: 'feelings_3_2', labels: scale_1, required: true},
-],
- button_label:'次へ',
- on_finish: function(data) {
- data.questionnaire_3_1 = JSON.parse(data.responses).feelings_3_1,
- data.questionnaire_3_2 = JSON.parse(data.responses).feelings_3_2
-  }
-
-};
-
-var  questionnaire_4 = {
- type: 'survey-likert',
- questions: [
-   {prompt: "音楽に明るい印象を持った", name: 'feelings_4_1', labels: scale_1, required: true},
-   {prompt: "音楽に悲しい印象を持った", name: 'feelings_4_2', labels: scale_1, required: true},
-   {prompt: "音楽に優しい印象を持った", name: 'feelings_4_3', labels: scale_1, required: true},
-   {prompt: "音楽に刺激的な印象を持った", name: 'feelings_4_4', labels: scale_1, required: true},
-   {prompt: "音楽に浮かれた印象を持った", name: 'feelings_4_5', labels: scale_1, required: true},
-   {prompt: "音楽に厳かな印象を持った", name: 'feelings_4_6', labels: scale_1, required: true},
-   {prompt: "音楽に楽しい印象を持った", name: 'feelings_4_7', labels: scale_1, required: true},
-   {prompt: "音楽に暗い印象を持った", name: 'feelings_4_8', labels: scale_1, required: true},
-   {prompt: "音楽に穏やかな印象を持った", name: 'feelings_4_9', labels: scale_1, required: true},
-   {prompt: "音楽に強い印象を持った", name: 'feelings_4_10', labels: scale_1, required: true},
-   {prompt: "音楽に落ち着きのない印象を持った", name: 'feelings_4_11', labels: scale_1, required: true},
-   {prompt: "音楽に気高い印象を持った", name: 'feelings_4_12', labels: scale_1, required: true},
- ],
- button_label:'次へ',
- on_finish: function(data) {
- data.questionnaire_4_1 = JSON.parse(data.responses).feelings_4_1,
- data.questionnaire_4_2 = JSON.parse(data.responses).feelings_4_2,
- data.questionnaire_4_3 = JSON.parse(data.responses).feelings_4_3,
- data.questionnaire_4_4 = JSON.parse(data.responses).feelings_4_4,
- data.questionnaire_4_5 = JSON.parse(data.responses).feelings_4_5,
- data.questionnaire_4_6 = JSON.parse(data.responses).feelings_4_6,
- data.questionnaire_4_7 = JSON.parse(data.responses).feelings_4_7,
- data.questionnaire_4_8 = JSON.parse(data.responses).feelings_4_8,
- data.questionnaire_4_9 = JSON.parse(data.responses).feelings_4_9,
- data.questionnaire_4_10 = JSON.parse(data.responses).feelings_4_10,
- data.questionnaire_4_11 = JSON.parse(data.responses).feelings_4_11,
- data.questionnaire_4_12 = JSON.parse(data.responses).feelings_4_12
-  }
-};
+var scale_2 = ["全く<br>当てはまらない", "かなり<br>当てはまらない", "やや<br>当てはまらない", "どちらでもない", "やや<br>当てはまる", "かなり<br>当てはまる", "非常に<br>当てはまる"];
 
 var　questionnaire_5 = {
  type: 'survey-likert',
@@ -390,7 +295,7 @@ var finish = {
           "<p style = 'text-align:left'>「次」を押すと画面上に本実験のデータが表示されますので</p>"+
           "<p style = 'text-align:left'>そのデータを</p>"+
           "<p style = 'text-align:left'><b>1,右クリックで「すべて選択」を選択する。WindowsのPCではCtrlキー+A,MacのPCではCommandキー+Aの同時押しでもすべて選択ができます。ドラッグですべて選択することも可能です。</b></p>"+
-          "<p style = 'text-align:left'><b>2,もう一度右クリックをしてコピーを選択する。</b></p>"+
+          "<p style = 'text-align:left'><b>2,もう一度右クリックをして「コピー」を選択する。</b></p>"+
           "<p style = 'text-align:left'><b>3,メールを開き,e-classに記載した実験責任者のメールアドレス(cgvb0181@mail2.doshisha.ac.jp)に、右クリックで「貼り付け」を選択してコピーした内容をすべて本文に貼り付けて送信する。</b></p>"+
   　　　　 "<p style = 'text-align:left'>以上の1～3の手順で実験責任者のメールアドレスに必ず送信してください。</p>"+
   　　　　 "<p style = 'text-align:left'>なお、<b>連絡がなかった場合参加点を付与することができませんので必ずメールを送っていただきますようよろしくお願いします。</b></p>"+
@@ -413,12 +318,7 @@ timeline.push(instructions);
 timeline.push(instructions_2);
 timeline.push(pre_procedure);
 timeline.push(go_main);
-timeline.push(fullscreen_2);
 timeline.push(main_procedure);
 timeline.push(lead_questionnaire);
-timeline.push(questionnaire_1);
-timeline.push(questionnaire_2);
-timeline.push(questionnaire_3);
-timeline.push(questionnaire_4);
 timeline.push(questionnaire_5);
 timeline.push(finish);
