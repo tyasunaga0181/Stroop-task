@@ -13,7 +13,7 @@ var informedConsent_1 = {
 };
 
 var informedConsent_2 = {
-  type: 'survey-text',
+  type: 'survey-multi-select',
   questions:[{
     prompt:
       '<div style = "font-size: 16pt; text-align: left;"><p><b>3．危険性ならびに不利益</b>' +
@@ -26,15 +26,11 @@ var informedConsent_2 = {
       '<br>研究責任者: 及川 昌典(同志社大学心理学部教授) Email: moikawa@mail.doshisha.ac.jp' +
       '<br>研究実施者: 安永 俊樹, 西村 知華, 上田 颯都(同志社大学及川ゼミ) Email: cgvb0181@mail2.doshisha.ac.jp</p></div>'+
     　'<p>以上の内容に同意していただける方はチェックボックスにチェックして「次へ」を押してください。</p>',
-      columns: 10,
       required: true,
        name: 'approval',
   options: ['<span style = "font-size: 14pt">説明事項をよく読み，理解した上で，研究参加に同意します。</span>']
   }],
       button_label: '次へ',
-  on_finish: function(data) {
-    data.name = JSON.parse(data.responses).participantname
-  }
 };
 
 var PC_check = {
@@ -123,7 +119,7 @@ type: 'html-keyboard-response',
             "<p style = 'text-align:left'>上記のような十字が表示されます。課題中はこの十字を視界の中心で捉えるようにしてください。</p>"+
             "<p style = 'text-align:left'>「R,G,Y,B」のいずれかのキーを押すと次に進みます。</p>",
 choices: [82, 66, 89, 71],
-post_trial_gap:1000
+post_trial_gap:1000,
 };
   
 var stimuli = [
