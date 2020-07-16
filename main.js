@@ -1,7 +1,7 @@
 var informedConsent_1 = {
   type: 'html-button-response',
   stimulus:
-      '<span style = "font-size: 16pt"><b>以下の内容をよく読んで、理解した上で実験参加に同意いただける方は次のページの空欄に氏名の入力をお願いします。同意されない方は、ウィンドウを閉じてください。</b></span>'+
+      '<span style = "font-size: 16pt"><b>以下の内容をよく読んで、理解した上で実験参加に同意いただける方は次のページのチェックボックスにチェックをお願いします。同意されない方は、ウィンドウを閉じてください。</b></span>'+
       '<div style = "font-size: 16pt; text-align: left;"><p>この度は本実験に参加していただき、誠にありがとうございます。参加にあたり、以下の説明をお読みください。</p>' +
       '<p><b>1．研究目的</b>' +
       '<br>本研究は、環境が課題成績に与える影響について調査することを目的としております。</p>' +
@@ -25,10 +25,11 @@ var informedConsent_2 = {
       '<p><b>6.研究に関する問い合わせ先</b>' +
       '<br>研究責任者: 及川 昌典(同志社大学心理学部教授) Email: moikawa@mail.doshisha.ac.jp' +
       '<br>研究実施者: 安永 俊樹, 西村 知華, 上田 颯都(同志社大学及川ゼミ) Email: cgvb0181@mail2.doshisha.ac.jp</p></div>'+
-    　'<p>以上の内容に同意していただける方は空欄に氏名を入力して「次へ」を押してください。</p>',
+    　'<p>以上の内容に同意していただける方はチェックボックスにチェックして「次へ」を押してください。</p>',
       columns: 10,
       required: true,
-      name: 'participantname'
+       name: 'approval',
+  options: ['<span style = "font-size: 14pt">説明事項をよく読み，理解した上で，研究参加に同意します。</span>']
   }],
       button_label: '次へ',
   on_finish: function(data) {
@@ -99,7 +100,7 @@ var gender = {
 };
 
 var instructions = {
-type: 'html-button-response',
+type: 'html-keyboard-response',
 stimulus: "<p style = 'text-align:left'>これから課題を行ってもらいます</p>" +
           "<p style = 'text-align:left'>この課題では、以下のような色のついた単語を見てもらいます</p>"+
           "<p style='color:red;font-size:80pt;'>あお</p>" +
@@ -109,17 +110,19 @@ stimulus: "<p style = 'text-align:left'>これから課題を行ってもらい�
           "<p style = 'text-align:left'>・<span style = 'color:green'>みどり</span>の単語ならGを押す</p>" +
           "<p style = 'text-align:left'>・<span style = 'color:yellow'>きいろ</span>の単語ならYを押す</p>" +
           "<p style = 'text-align:left'>上の例の場合だと、赤色で「あお」と書いてありますので、Rを押してください</p>"+
-          "<p style = 'text-align:left'>また本課題中は左手中指をR、人差し指をG、右手中指をY、人差し指をBの位置にそれぞれ配置して対応するキーボードを押してください。</p>",
-choices: '次',
+          "<p style = 'text-align:left'>また本課題中は左手中指をR、人差し指をG、右手中指をY、人差し指をBの位置にそれぞれ配置して対応するキーボードを押してください。</p>"+
+          "<p style = 'text-align:left'>「R,G,Y,B」のいずれかのキーを押すと次に進みます。</p>",
+choices: [82, 66, 89, 71],
+
 };
 
 var instructions_2 = {
-type: 'html-button-response',
+type: 'html-keyboard-response',
   stimulus: "<p style = 'text-align:left'>また、課題中は色のついた文字を表示していない間画面中央に</p>" +
   　　　　　 '<div style="font-size:60px;">+</div>'+
             "<p style = 'text-align:left'>上記のような十字が表示されます。課題中はこの十字を視界の中心で捉えるようにしてください。</p>"+
-            "<p style = 'text-align:left'>「次」を押すと課題の練習が開始されます。</p>" ,
-choices: '次',
+            "<p style = 'text-align:left'>「R,G,Y,B」のいずれかのキーを押すと次に進みます。</p>",
+choices: [82, 66, 89, 71],
 post_trial_gap:1000
 };
   
@@ -216,22 +219,11 @@ var pre_procedure = {
 };
 
 var go_main = {
-  type: 'html-button-response',
+  type: 'html-keyboard-response',
   stimulus: "<p style = 'text-align:left'>練習は以上です。ただいまより本番を行ってもらいます。</p>" +
-  　　　　　 "<p style = 'text-align:left'>本番の課題は音楽を聴取しながら行っていただきます。</p>" +
-            "<p style = 'text-align:left'>Escキー、またはF11キーを押して一旦全画面表示を終了してください。</p>" +
-            "<p style = 'text-align:left'>実験募集メールに記載されたもう一つの実験(実験2 https://doshishapsy.qualtrics.com/jfe/form/SV_0GOtaLBz18fASTX)を音量調節を終えるところまで進めてください。</p>" +
-            "<p style = 'text-align:left'>音量調節を終えたら<b>音楽を再生している状態で</b>「次」を押して課題を始めてください。</p>",
-  choices: '次',
+            "<p style = 'text-align:left'><b>音楽を再生している状態で</b>「R,G,Y,B」のいずれかのキーを押すと次に進みます。</p>",
+choices: [82, 66, 89, 71],
           };
-
-var fullscreen_2 = {
-  type: 'fullscreen',
-  message: "<p style = 'text-align:left'>以下のボタンをクリックすると，画面が全画面表示に切り替わり課題が開始されます。</p>" +
-           "<p style = 'text-align:left'>指示があるまで全画面表示をやめないようにしてください。</p>",
-  button_label: "全画面表示に切り替え",
-  fullscreen_mode: true
-};
 
 var main_stroop = {
   timeline: [{
@@ -267,7 +259,7 @@ var lead_questionnaire = {
   choices: '次',
 };
 
-var scale_1 = ["音楽を<br>聴取しなかった","非常に<br>当てはまる", "かなり<br>当てはまる", "やや<br>当てはまる", "どちらでもない", "やや<br>当てはまらない", "かなり<br>当てはまらない", "非常に<br>当てはまらない"];
+var scale_1 = ["全くbr>当てはまらない", "かなり<br>当てはまらない", "やや<br>当てはまらない", "どちらでもない", "やや<br>当てはまる", "かなり<br>当てはまる", "非常に<br>当てはまる"];
 
 var questionnaire_1 = {
   type: 'survey-likert',
@@ -413,7 +405,6 @@ timeline.push(instructions);
 timeline.push(instructions_2);
 timeline.push(pre_procedure);
 timeline.push(go_main);
-timeline.push(fullscreen_2);
 timeline.push(main_procedure);
 timeline.push(lead_questionnaire);
 timeline.push(questionnaire_1);
