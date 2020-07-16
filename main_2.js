@@ -32,9 +32,6 @@ var informedConsent_2 = {
   options: ['<span style = "font-size: 14pt">説明事項をよく読み，理解した上で，研究参加に同意します。</span>']
   }],
       button_label: '次へ',
-  on_finish: function(data) {
-    data.name = JSON.parse(data.responses).participantname
-  }
 };
 
 var PC_check = {
