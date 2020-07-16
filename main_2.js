@@ -122,7 +122,7 @@ type: 'html-keyboard-response',
             "<p style = 'text-align:left'>上記のような十字が表示されます。課題中はこの十字を視界の中心で捉えるようにしてください。</p>"+
             "<p style = 'text-align:left'>「R,G,Y,B」のいずれかのキーを押すと課題の練習が開始されます。</p>" ,
 choices: [82, 66, 89, 71],
-post_trial_gap:1000
+post_trial_gap:1000,
 };
   
 var stimuli = [
