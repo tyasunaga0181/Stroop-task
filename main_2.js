@@ -3,52 +3,34 @@ var informedConsent_1 = {
   stimulus:
       '<span style = "font-size: 16pt"><b>以下の内容をよく読んで、理解した上で実験参加に同意いただける方は次のページのチェックボックスにチェックをお願いします。同意されない方は、ウィンドウを閉じてください。</b></span>'+
       '<div style = "font-size: 16pt; text-align: left;"><p>この度は本実験に参加していただき、誠にありがとうございます。参加にあたり、以下の説明をお読みください。</p>' +
-      '<p><b>1．研究目的</b>' +
-      '<br>本研究は、環境が課題成績に与える影響について調査することを目的としております。</p>' +
-      '<p><b>2．研究内容</b>' +
-      '<br>本研究では、音楽を聴取しながら課題を行っていただき、その後簡単な質問紙に答えていただきます。課題の実行と質問紙は合わせて15分程度で終了します。なお、これから行う質問紙や課題は、あなた個人の性格や能力を個別に評価することを目的とはしておりません。</p>' +
-      '<p><b>3.本実験に取り組む環境について</b>' +
-    　'<br>本実験はスマートフォンでは実施できません。必ずPCで行うようにしてください。また、ヘッドホンかイヤホンを着用して課題に取り組んでください。課題の途中でウィンドウを閉じたり「戻る」を押すと回答が保存されませんのでお気を付けください。F11キーを押し指示があるまで全画面表示で本実験を進めてください。</p></div>',
-  choices: '次',
+      '<p><br>本研究の目的は、環境が課題成績に与える影響について調査することです。'+
+      '<br>PCで課題を行なった後、アンケートに答えていただきます。実験は全体で15分程度で終了します。本実験は、スマートフォンやタブレットではなく、必ずPCで行ってください。また、ヘッドホンかイヤホンを着用して課題に取り組んでください。課題の途中でウィンドウを閉じたり、「戻る」を押したりしないでください。</p></div>',
+      choices: '次',
+};
 };
 
 var informedConsent_2 = {
   type: 'survey-multi-select',
   questions:[{
     prompt:
-      '<div style = "font-size: 16pt; text-align: left;"><p><b>3．危険性ならびに不利益</b>' +
-      '<br>質問紙への回答や課題中、もし不快感を感じることがあったら、ご自身の意志で研究参加をいつでも中止することができます。参加の中止はいつ、いかなる理由でも可能です。また、参加の中止、不参加に伴う不利益は一切生じません。</p>' +
-      '<p><b>4．参加者の権利</b>' +
-      '<br>本研究の参加は皆様の自由意志によるものです。本研究に参加することに同意しても、それはいつでも撤回することができます。同意を撤回しても、いかなる不利益を受けることはありません。参加に同意した後に、参加途中で撤回する場合は、そのままウェブブラウザを閉じていただけると同意撤回したとみなします。参加途中で参加を撤回された場合は、そのデータをその後の研究で使用いたしません。また、最後まで参加したもののご自身の研究データを研究に使用してほしくない場合は、以下の連絡先にその旨をご連絡いただければ、その後の研究でそのデータを使用いたしません。</p>' +
-      '<p><b>5.研究結果の使用およびプライバシーの保護</b>' +
-      '<br>参加された方の質問紙への回答や課題への反応は全て匿名で扱われ、データからあなたが特定されることはありません。本研究の結果は、学術論文や学会発表などを通じて公表される可能性があります。ただし、その際も統計的に処理した結果のみが公表されるため、特定の個人に焦点を当てた発表は行いません。</p>' +
-      '<p><b>6.研究に関する問い合わせ先</b>' +
+       '<div style = "font-size: 16pt; text-align: left;"><p>実験への参加は、あくまでも任意です。参加中いつでも、ご自身の意志で自由に参加を中止することができます。本研究に参加することに同意しても、いつでも撤回することができます。途中でブラウザを閉じていただければ、参加への同意を撤回したものとみなします。不参加や参加の中止によって、不利益が生じることはありません。また、最後まで参加したものの、ご自身のデータを研究に使用してほしくないという場合は、学期中にその旨をご連絡ください。</p>'+
+      '<br>実験データは、匿名で統計的に処理されます。学術論文や学会発表で公表される可能性がありますが、データから個人が特定されることはありません。</p>' +
+      '<p><b>研究に関する問い合わせ先</b>' +
+      '<br> 研究についてご不明な点がありましたら、研究実施者までお問い合わせください'+
       '<br>研究責任者: 及川 昌典(同志社大学心理学部教授) Email: moikawa@mail.doshisha.ac.jp' +
       '<br>研究実施者: 安永 俊樹, 西村 知華, 上田 颯都(同志社大学及川ゼミ) Email: cgvb0181@mail2.doshisha.ac.jp</p></div>'+
-    　'<p>以上の内容に同意していただける方はチェックボックスにチェックをして「次へ」を押してください。</p>',
-      columns: 10,
+    　'<p>以上の内容に同意していただける方はチェックボックスにチェックして「次へ」を押してください。</p>',
       required: true,
-      name: 'approval',
+       name: 'approval',
   options: ['<span style = "font-size: 14pt">説明事項をよく読み，理解した上で，研究参加に同意します。</span>']
   }],
       button_label: '次へ',
 };
 
-var PC_check = {
-  type: 'survey-multi-select',
-  questions: [
-    　{prompt:'<p>本実験はスマートフォンでは実施できません。必ずPCで行うようにしてください。PCで行っている場合はチェックをお願いします。</p>',
-      options: ['<span style = "font-size: 14pt">私はPCで本実験に参加しています。</span>'],
-      required: true,
-      name: 'approval_1'
-  }],
-  button_label: '次へ'
-};
-
 var half_check = {
   type: 'survey-text',
   questions: [
-    　{prompt:'<p>この後いくつかデータを入力していただきます。その際<b>半角入力でデータを入力するようお願いします</b>半角入力になっているかを確認してyesと入力して次へ進んでください。</p>', columns: 3,
+    　{prompt:'<p>本実験は、スマートフォンやタブレットではなく、必ずPCで行ってください。また、<b>半角入力でデータを入力するようお願いします。</b><br>半角入力になっているかを確認するためyesと入力して次へ進んでください。</p>', columns: 3,
       required: true,
       name: 'approval_2'
   }],
@@ -66,7 +48,7 @@ var fullscreen = {
 var par_id = {
   type: 'survey-text',
   questions: [
-    {prompt: '<p>学籍番号を入力してください</p>', columns: 10, required: true, name: 'participantID'},
+    {prompt: '<p>学籍番号を入力してください(参加の確認のために使用されます。)</p>', columns: 10, required: true, name: 'participantID'},
   ],
   button_label: '次へ',
   on_finish: function(data) {
@@ -98,8 +80,8 @@ var gender = {
 
 var instructions = {
 type: 'html-keyboard-response',
-stimulus: "<p style = 'text-align:left'>これから課題を行ってもらいます</p>" +
-          "<p style = 'text-align:left'>この課題では、以下のような色のついた単語を見てもらいます</p>"+
+stimulus:"<p style = 'text-align:left'>これから課題を行ってもらいます</p>" +
+          "<p style = 'text-align:left'>画面中央に以下のような色のついた単語が表示されます</p>"+
           "<p style='color:red;font-size:80pt;'>あお</p>" +
           "<p style = 'text-align:left'>単語の意味は無視して、それぞれの単語の「色」を以下のキーボードを押して回答してください</p>"+
           "<p style = 'text-align:left'>・<span style = 'color:red'>あか</span>の単語ならRを押す</p>" +
@@ -107,17 +89,17 @@ stimulus: "<p style = 'text-align:left'>これから課題を行ってもらい�
           "<p style = 'text-align:left'>・<span style = 'color:green'>みどり</span>の単語ならGを押す</p>" +
           "<p style = 'text-align:left'>・<span style = 'color:yellow'>きいろ</span>の単語ならYを押す</p>" +
           "<p style = 'text-align:left'>上の例の場合だと、赤色で「あお」と書いてありますので、Rを押してください</p>"+
-          "<p style = 'text-align:left'>また本課題中は左手中指をR、人差し指をG、右手中指をY、人差し指をBの位置にそれぞれ配置して対応するキーボードを押してください。</p>"+
+          "<p style = 'text-align:left'><br>また本課題中は左手中指をR、人差し指をG、右手中指をY、人差し指をBの位置に置いてください。</p>"+
+ 　　　　  "<p style = 'text-align:left'>単語が表示されたら、できるだけ素早く、かつ正確に反応してください</p>" +
           "<p style = 'text-align:left'>「R,G,Y,B」のいずれかのキーを押すと次に進みます。</p>",
 choices: [82, 66, 89, 71],
 };
 
 var instructions_2 = {
 type: 'html-keyboard-response',
-  stimulus: "<p style = 'text-align:left'>また、課題中は色のついた文字を表示していない間画面中央に</p>" +
-  　　　　　 '<div style="font-size:60px;">+</div>'+
-            "<p style = 'text-align:left'>上記のような十字が表示されます。課題中はこの十字を視界の中心で捉えるようにしてください。</p>"+
-            "<p style = 'text-align:left'>「R,G,Y,B」のいずれかのキーを押すと課題の練習が開始されます。</p>" ,
+  stimulus:  "<p style = 'text-align:left'>課題中は、画面中央を、視野の中心で捉えるようにしてください。</p>"+
+            "<p style = 'text-align:left'>単語が表示されたら、できるだけ素早く、かつ正確に反応してください</p>" +
+            "<p style = 'text-align:left'>「R,G,Y,B」のいずれかのキーを押すと課題の練習が開始されます。</p>",
 choices: [82, 66, 89, 71],
 post_trial_gap:1000,
 };
@@ -217,7 +199,10 @@ var pre_procedure = {
 var go_main = {
   type: 'html-keyboard-response',
   stimulus: "<p style = 'text-align:left'>練習は以上です。ただいまより本番を行ってもらいます。</p>" +
-            "<p style = 'text-align:left'>「R,G,Y,B」のいずれかのキーを押して課題を始めてください。</p>",
+            "<p style = 'text-align:left'>課題中は、画面中央を視野の中心で捉えるようにしてください。</p>" +
+            "<p style = 'text-align:left'>単語が表示されたら、できるだけ素早く、かつ正確に反応してください</p>" +
+            "<p style = 'text-align:left'>赤色ならR, 青色ならB, 緑色ならG, 黄色ならYを押します。</p>" +
+            "<p style = 'text-align:left'>「R,G,Y,B」のいずれかのキーを押すと本番に進みます。</p>",
   choices: [82, 66, 89, 71],
           };
 
@@ -288,11 +273,11 @@ var finish = {
  stimulus:"<p style = 'text-align:left'>以上で質問紙は終了です。</p>" +
           "<p style = 'text-align:left'>「次」を押すと画面上に本実験のデータが表示されますので</p>"+
           "<p style = 'text-align:left'>そのデータを</p>"+
-          "<p style = 'text-align:left'><b>1,右クリックで「すべて選択」を選択する。WindowsのPCではCtrlキー+A,MacのPCではCommandキー+Aの同時押しでもすべて選択ができます。ドラッグですべて選択することも可能です。</b></p>"+
+          "<p style = 'text-align:left'><b>1,右クリックで「すべて選択」を選択する。WindowsのPCではCtrlキー+A,MacのPCではCommandキー+Aの同時押しでもすべて選択ができます。</b></p>"+
           "<p style = 'text-align:left'><b>2,もう一度右クリックをして「コピー」を選択する。</b></p>"+
           "<p style = 'text-align:left'><b>3,メールを開き,e-classに記載した実験責任者のメールアドレス(cgvb0181@mail2.doshisha.ac.jp)に、右クリックで「貼り付け」を選択してコピーした内容をすべて本文に貼り付けて送信する。</b></p>"+
   　　　　 "<p style = 'text-align:left'>以上の1～3の手順で実験責任者のメールアドレスに必ず送信してください。</p>"+
-  　　　　 "<p style = 'text-align:left'>なお、<b>連絡がなかった場合参加点を付与することができませんので必ずメールを送っていただきますようよろしくお願いします。</b></p>"+
+  　　　　 "<p style = 'text-align:left'>なお、<b>送信漏れがあると参加点を付与することができませんので必ず送信するようよろしくお願いします。</b></p>"+
   　　　　 "<p style = 'text-align:left'>次のページに進むとこのページに戻ることはできません。手順が不安な方は写真やスクリーンショットを撮ってこの画面を記録しておくようにしてください。</p>"+
           "<p style = 'text-align:left'>メールの送信をもって実験終了となりますので、メールを送信された方はEscキーを押して全画面表示を終了しウィンドウを閉じていただいて構いません。</p>"+
           "<p style = 'text-align:left'>本日は実験に参加していただきありがとうございました。</p>",
@@ -302,7 +287,6 @@ var finish = {
 var timeline = [];
 timeline.push(informedConsent_1);
 timeline.push(informedConsent_2);
-timeline.push(PC_check);
 timeline.push(half_check);
 timeline.push(fullscreen);
 timeline.push(par_id);
