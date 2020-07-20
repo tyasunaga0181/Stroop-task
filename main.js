@@ -29,7 +29,7 @@ var informedConsent_2 = {
 var half_check = {
   type: 'survey-text',
   questions: [
-    　{prompt:'<p>本実験は、スマートフォンやタブレットではなく、必ずPCで行ってください。また、<b>半角入力でデータを入力するようお願いします</b>半角入力になっているかを確認するためyesと入力して次へ進んでください。</p>', columns: 3,
+    　{prompt:'<p>本実験は、スマートフォンやタブレットではなく、必ずPCで行ってください。また、<b>半角入力でデータを入力するようお願いします。</b><br>半角入力になっているかを確認するためyesと入力して次へ進んでください。</p>', columns: 3,
       required: true,
       name: 'approval_2'
   }],
